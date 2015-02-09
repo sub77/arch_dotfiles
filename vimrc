@@ -387,7 +387,7 @@ let g:snips_email  = "khughitt@umd.edu"
 let g:snips_github = "https://github.com/khughitt"
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['rmd'] = 'r'
+let g:snipMate.scope_aliases['rmd'] = 'r,rmd'
 
 " ---------------------------------------------------------------------------
 "  Supertab
