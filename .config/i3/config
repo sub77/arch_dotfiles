@@ -1,0 +1,401 @@
+################
+## APPEARANCE ##
+################
+## Colors
+set $foreground					#707070
+set $background					#f3f3f3
+set $color0						#efefef
+set $color1						#ef6b7b
+set $color2						#a1d569
+set $color3						#f5ce35
+set $color4						#4ec2e8
+set $color5						#f6bcce
+set $color6						#8ad4d3
+set $color7						#707070
+set $color8						#b3b3b3
+set $color9						#ed5466
+set $color10					#99ca64
+set $color11					#f4c728
+set $color12					#42accf
+set $color13					#dc7b99
+set $color14					#57b2b0
+set $color15					#909090
+
+## Layout Settings
+set $default_gaps_inner 		20
+set $default_gaps_outer 		10
+set $resize 					5
+set $resize_fine				1
+set $bordersize					1
+font 							pango:Roboto Mono for Powerline, Material Icons 9
+gaps inner						$default_gaps_inner
+gaps outer						$default_gaps_outer
+workspace_layout				tabbed
+focus_follows_mouse				no
+mouse_warping 					output
+new_window 						pixel 0
+smart_borders 					no_gaps
+workspace_auto_back_and_forth	yes
+force_display_urgency_hint 		0 ms
+focus_on_window_activation 		urgent
+
+## Container && Windows
+#						BORDER		BACKGROUND	TEXT		INDICATOR
+client.focused	  		$color12	$color12    $color0		$color5
+client.unfocused		$color8 	$color8    	$foreground	$color5
+client.focused_inactive $color7		$color7		$color0		$color5
+client.urgent	   		$color1		$color1		$color0		$color5
+
+## Function Keys
+set $mod 						mod1
+set $sys 						mod4
+floating_modifier				$mod
+
+## Workspace Names
+set $ws_home1 					"1: "
+set $ws_home2 					"2: "
+set $ws_home3					"3: "
+set $ws_textedit				"10:"
+set $ws_terminal				"11:"
+set $ws_music					"21:"
+set $ws_voice					"22:"
+set $ws_www						"30:"
+set $ws_mail					"31:"
+set $ws_chat					"32:"
+set $ws_games					"40:"
+set $ws_update					"97:"
+set $ws_labs					"98:"
+set $ws_vm						"99:"
+
+## Workspace Bindings
+workspace 		$ws_home1		output DVI-I-1
+workspace 		$ws_home2		output DP-0
+workspace 		$ws_textedit	output HDMI-0
+workspace 		$ws_games		output DP-0
+
+## Scratchpad
+for_window 	[Title="CommandLine"] move scratchpad; [title="CommandLine"] scratchpad show; [title="CommandLine"] border normal
+for_window 	[class="(?i)pcmanfm"] move scratchpad; [class="(?i)pcmanfm"] scratchpad show; [class="(?i)pcmanfm"] border none
+#for_window [class="(?i)thunar"] move scratchpad; [class="(?i)thunar"] scratchpad show; [class="(?i)thunar"] border none
+
+## App Bindings
+assign 	[Title="Steam"]				$ws_games
+assign 	[Title="LoL Patcher"]		$ws_games
+assign 	[Title="PVP.net Client"]	$ws_games
+assign 	[Title="DOTA 2 - OpenGL"]	$ws_games
+assign 	[class="(?i)VirtualBox"]	$ws_vm
+assign 	[class="(?i)qemu-system"]	$ws_vm
+assign 	[class="(?i)thunderbird"]	$ws_mail
+assign 	[class="TeamSpeak 3"] 		$ws_voice
+assign 	[title="ncmpcpp"]			$ws_music
+assign 	[class="(?i)atom"]			$ws_textedit
+assign 	[class="(?i)smuxi-frontend-gnome"]	$ws_chat
+#assign	[title="SysUPDATE"]			$ws_update
+
+## App Focus
+for_window	[class="(?i)teamspeak"] focus
+for_window	[class="(?i)Steam"] focus
+for_window	[title="ncmpcpp"] focus
+for_window	[title="SysUPDATE"] focus; for_window [title="SysUPDATE"] border 5px
+for_window	[class="(?i)thunderbird"] focus
+for_window	[class="(?i)qemu-system"] focus
+for_window	[title="Oracle VM VirtualBox Manager"] focus
+
+## App Floating
+for_window	[title="SysUPDATE"] floating enable
+for_window	[class="(?i)XCalc"] floating enable
+for_window	[class="(?i)gsimplecal"] floating enable
+for_window	[window_role="pop-up"] floating enable
+for_window	[window_role="bubble"] floating enable
+for_window	[window_role="task_dialog"] floating enable
+for_window	[window_type="dialog"] floating enable
+for_window	[window_type="menu"] floating enable
+for_window	[window_role="Preferences"] floating enable
+for_window	[window_role="Organizer"] floating enable
+#for_window	[class="(?i)qemu-system"] floating enable
+for_window	[title="Oracle VM VirtualBox Manager"] floating enable
+for_window	[instance="sun-awt-X11-XFramePeer"] floating enable
+for_window	[class="(?i)pavucontrol"] floating enable
+for_window	[title="Update News"] floating enable
+for_window	[title="Chat"] floating enable
+for_window	[title="Friends"] floating enable
+for_window	[class="(?i)teamspeak"] floating enable
+for_window	[class="(?)system-monitor"] floating enable
+for_window	[class="(?)Lxappearance"] floating enable
+for_window	[class="(?)Vlc"] floating enable
+for_window	[class="(?)Pcmanfm"] floating enable
+for_window	[class="(?)Thunar"] floating enable
+for_window	[window_role="page-info"] floating enable
+
+## Disable Borders
+for_window  [class="(?i)Civ5XP"] fullscreen; [class="(?i)Civ5XP"] border none
+
+#################
+## KEYBINDINGS ##
+#################
+## Terminals
+bindsym $mod+Return 		exec --no-startup-id termite -r 'Terminal'
+bindsym $sys+Return 		exec --no-startup-id termite -r 'Terminal'
+bindsym $mod+BackSpace 		exec --no-startup-id  $HOME/.config/i3/scripts/switch-open.sh commandline
+
+## Programs
+bindsym $mod+space 			exec --no-startup-id rofi -show run
+bindsym $mod+i 				exec --no-startup-id firefox
+#bindsym $mod+c 			exec --no-startup-id $HOME/.config/i3/scripts/switch-open.sh smuxi
+bindsym $mod+n 				exec --no-startup-id $HOME/.config/i3/scripts/switch-open.sh ncmpcpp
+bindsym $mod+m 				exec --no-startup-id $HOME/.config/i3/scripts/switch-open.sh mail
+bindsym $mod+shift+e 		exec --no-startup-id $HOME/.config/i3/scripts/switch-open.sh thunar
+bindsym $sys+e 				exec --no-startup-id $HOME/.config/i3/scripts/switch-open.sh pcmanfm
+bindsym $mod+shift+q 		exec --no-startup-id mate-system-monitor
+bindsym $sys+shift+q 		exec --no-startup-id mate-system-monitor
+bindsym Print 				exec --no-startup-id scrot $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
+bindsym Shift+Print 		exec --no-startup-id scrot -s $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
+
+## Audio keybindings
+bindsym XF86AudioRaiseVolume 	exec --no-startup-id "pulseaudio-ctl up 2"
+bindsym XF86AudioLowerVolume 	exec --no-startup-id "pulseaudio-ctl down 2"
+bindsym XF86AudioMute 			exec --no-startup-id "pulseaudio-ctl mute"
+bindsym XF86AudioPlay 			exec --no-startup-id "mpc toggle"
+bindsym XF86AudioStop 			exec --no-startup-id "mpc stop"
+bindsym XF86AudioPrev 			exec --no-startup-id "mpc prev"
+bindsym XF86AudioNext 			exec --no-startup-id "mpc next"
+
+## i3 Keybindings
+bindsym $mod+shift+r 		restart
+bindsym $mod+ctrl+e 		reload
+bindsym $mod+c 				exec  --no-startup-id dmenu_run -b -i -l 20
+bindsym $mod+q	 			kill
+bindsym $sys+q				kill
+bindsym $mod+shift+w 		exec --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
+
+## Container layouts
+bindsym $mod+s				layout stacking
+bindsym $mod+w				layout tabbed
+bindsym $mod+e				layout toggle split
+bindsym $mod+f				fullscreen
+bindsym $mod+shift+f		fullscreen global
+
+## Change container split orientation
+bindsym $mod+h				split h
+bindsym $mod+v				split v
+
+## Toggle floating / tiling
+bindsym $mod+d				floating toggle
+bindsym $mod+shift+d 		focus mode_toggle
+
+## Scratchpad
+bindsym $mod+a				scratchpad show
+bindsym $mod+shift+a		move scratchpad
+
+## Sticky Windows
+bindsym $mod+Shift+s 		sticky toggle
+
+## Fullscreen Modifier
+bindsym $mod+y 				fullscreen disable; floating enable; resize set 900 506; sticky enable; move window to position 4856 25
+
+## Change container focus
+bindsym $mod+k 				focus up
+bindsym $mod+j 				focus down
+bindsym $mod+l 				focus left
+bindsym $mod+odiaeresis		focus right
+bindsym $mod+Up 			focus up
+bindsym $mod+Down 			focus down
+bindsym $mod+Left 			focus left
+bindsym $mod+Right			focus right
+
+## Move focused container
+bindsym $mod+shift+k 			move up
+bindsym $mod+shift+j 			move down
+bindsym $mod+shift+l 			move left
+bindsym $mod+shift+odiaeresis	move right
+bindsym $mod+shift+Up			move up
+bindsym $mod+shift+Down 		move down
+bindsym $mod+shift+Left 		move left
+bindsym $mod+shift+Right 		move right
+
+## Change workspace focus
+bindsym $mod+Tab 			workspace next
+bindsym $mod+shift+tab 		workspace prev
+
+## Move workspace to output
+bindsym $mod+ctrl+Left		move workspace to output left
+bindsym $mod+ctrl+Right		move workspace to output right
+
+## Switch to workspace
+bindsym $mod+1				workspace $ws_home1
+bindsym $mod+2				workspace $ws_home2
+bindsym $mod+3				workspace $ws_textedit
+bindsym $mod+4				workspace $ws_terminal
+bindsym $mod+5				workspace $ws_music
+bindsym $mod+6				workspace $ws_voice
+bindsym $mod+7				workspace $ws_www
+bindsym $mod+8				workspace $ws_mail
+bindsym $mod+9				workspace $ws_games
+bindsym $mod+0				workspace $ws_vm
+
+## Move selected container to specific workspace
+bindsym $mod+shift+1		move container to workspace $ws_home1
+bindsym $mod+shift+2		move container to workspace $ws_home2
+bindsym $mod+shift+3		move container to workspace $ws_textedit
+bindsym $mod+shift+4		move container to workspace $ws_terminal
+bindsym $mod+shift+5		move container to workspace $ws_music
+bindsym $mod+shift+6		move container to workspace $ws_voice
+bindsym $mod+shift+7		move container to workspace $ws_www
+bindsym $mod+shift+8		move container to workspace $ws_mail
+bindsym $mod+shift+9		move container to workspace $ws_chat
+bindsym $mod+shift+0		move container to workspace $ws_vm
+
+###########
+## MODES ##
+###########
+## Resize windows (you can also use the mouse for that)
+set $mode_resize   ::   resize
+bindsym $mod+r 				mode "$mode_resize"
+mode "$mode_resize" {
+	bindsym Left 			resize shrink width 1 px or 1 ppt
+	bindsym Down 			resize grow height 1 px or 1 ppt
+	bindsym Up 				resize shrink height 1 px or 1 ppt
+	bindsym Right 			resize grow width 1 px or 1 ppt
+
+	bindsym Shift+Left 		resize shrink width 5 px or 5 ppt
+	bindsym Shift+Down 		resize grow height 5 px or 5 ppt
+	bindsym Shift+Up 		resize shrink height 5 px or 5 ppt
+	bindsym Shift+Right 	resize grow width 5 px or 5 ppt
+
+	bindsym Return 			mode "default"
+	bindsym Escape 			mode "default"
+}
+
+## Power Control
+set $mode_power   ::   (L)ock | (E)xit | (S)uspend | (H)ibernate | (R)eboot | (P)oweroff
+mode "$mode_power" {
+	bindsym l 				mode "default", exec --no-startup-id $HOME/.config/i3/scripts/i3lock.sh $HOME/.config/i3/scripts/alt2_lock.png
+	bindsym e 				mode "default", exec --no-startup-id $HOME/.config/i3/scripts/i3exit logout
+	bindsym s 				mode "default", exec --no-startup-id $HOME/.config/i3/scripts/i3exit suspend
+	bindsym h 				mode "default", exec --no-startup-id $HOME/.config/i3/scripts/i3exit hibernate
+	bindsym r 				mode "default", exec --no-startup-id $HOME/.config/i3/scripts/i3exit reboot
+	bindsym p 				mode "default", exec --no-startup-id $HOME/.config/i3/scripts/i3exit shutdown
+
+	bindsym Return 			mode "default"
+	bindsym Escape 			mode "default"
+}
+bindsym $mod+p 				mode "$mode_power"
+
+## Modify Gaps
+set $mode_gaps    ::   (o) outer, (i) inner, d|0
+set $mode_gaps_outer Outer Gaps: +|-|d|0 (local), Shift + +|-|d|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|d|0 (local), Shift + +|-|d|0 (global)
+bindsym $mod+g 				mode "$mode_gaps"
+mode "$mode_gaps" {
+	bindsym o      			mode "$mode_gaps_outer"
+	bindsym i      			mode "$mode_gaps_inner"
+
+	bindsym 0      			mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
+	bindsym d      			mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
+
+	bindsym Return 			mode "default"
+	bindsym Escape 			mode "default"
+}
+mode "$mode_gaps_inner" {
+	bindsym plus  			gaps inner current plus 5
+	bindsym minus 			gaps inner current minus 5
+	bindsym 0     			mode "default", gaps inner current set 0
+	bindsym d     			mode "default", gaps inner current set $default_gaps_inner
+
+	bindsym Shift+plus  	gaps inner all plus 5
+	bindsym Shift+minus 	gaps inner all minus 5
+	bindsym Shift+0     	mode "default", gaps inner all set 0
+	bindsym Shift+d     	mode "default", gaps inner all set $default_gaps_inner
+
+	bindsym Return 			mode "default"
+	bindsym Escape 			mode "default"
+}
+mode "$mode_gaps_outer" {
+	bindsym plus  			gaps outer current plus 5
+	bindsym minus 			gaps outer current minus 5
+	bindsym 0     			mode "default", gaps outer current set 0
+	bindsym d     			mode "default", gaps outer current set $default_gaps_outer
+
+	bindsym Shift+plus  	gaps outer all plus 5
+	bindsym Shift+minus 	gaps outer all minus 5
+	bindsym Shift+0     	mode "default", gaps outer all set 0
+	bindsym Shift+d     	mode "default", gaps outer all set $default_gaps_outer
+
+	bindsym Return mode 	"default"
+	bindsym Escape mode 	"default"
+}
+
+################
+##    BARS    ##
+################
+## Top Bar
+bar {
+#	i3bar_command 			i3bar -t
+	status_command 			i3blocks -v -c $HOME/.config/i3blocks/bar-top
+
+	# Positioning
+	position 				top
+#	output 					DP-0
+
+	# Disable SCROLLWHEEL in bar
+	bindsym button4 		nop
+	bindsym button5 		nop
+
+	workspace_buttons 		yes
+	strip_workspace_numbers	yes
+	# Hide Mode Indicatiors
+	binding_mode_indicator	no
+
+	tray_output 			primary
+
+	font 					pango:Roboto Mono, Icons 9
+	height 					20
+
+	colors {
+		statusline			$foreground
+		background			$background
+		separator			$background
+
+		#					BORDER		BACKGROUND  	TEXT
+		focused_workspace	$background	$background		$color4
+		inactive_workspace	$background	$background		$color8
+		active_workspace	$background	$background		$color7
+		urgent_workspace	$background	$background		$color1
+	}
+}
+
+bar {
+	i3bar_command 			i3bar -t
+	status_command 			i3blocks -c $HOME/.config/i3blocks/bar-bot
+	position 				bottom
+#	output 					DP-4
+
+	# Disable SCROLLWHEEL in bar
+#	bindsym button4 		nop
+#	bindsym button5 		nop
+
+	workspace_buttons 		no
+	strip_workspace_numbers	yes
+
+	tray_output 			none
+
+	font 					pango:Roboto Mono, Icons 9
+	height 					25
+
+	colors {
+		statusline			#dbdbdb
+		background			#343434AB
+		separator			$color7
+	}
+}
+
+################
+## AUTOSTARTS ##
+################
+exec --no-startup-id 		compton -b
+exec --no-startup-id 		dunst &
+exec --no-startup-id 		$HOME/.config/i3/scripts/wallpaper.sh
+exec --no-startup-id 		redshift &
+exec --no-startup-id 		caffeine -d
+exec --no-startup-id 		xset dpms 600
+exec --no-startup-id 		xss-lock -- /home/timo/.config/i3/scripts/i3lock.sh /home/timo/.config/i3/scripts/alt2_lock.png &

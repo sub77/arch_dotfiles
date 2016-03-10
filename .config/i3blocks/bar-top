@@ -1,0 +1,52 @@
+command=~/.config/i3blocks/blocklets/$BLOCK_NAME
+separator=false
+separator_block_width=10
+border_top=0
+border_left=0
+border_right=0
+border_bottom=3
+markup=pango
+
+[window label]
+full_text=
+color=#4ec2e8
+
+[window]
+command=xtitle -s
+interval=persist
+color=#707070
+separator_block_width=25
+
+[mail]
+command=~/.config/i3blocks/blocklets/mail.sh
+interval=150
+signal=1
+color=#707070
+separator_block_width=-3
+
+[pacheck]
+command=~/.config/i3blocks/blocklets/pacheck.sh
+interval=600
+signal=1
+separator_block_width=20
+
+[volumelabel]
+full_text=
+color=#707070
+separator_block_width=4
+
+[volume]
+command=~/.config/i3blocks/blocklets/volume --max-volume 100#1
+interval=1
+signal=1
+color=#707070
+separator_block_width=20
+
+#[mic]
+#interval=1
+#separator_block_width=20
+
+[time]
+command=echo "<span color='#7a7a7a'>`date +'%a %d %b'`</span> <b>`date +'%T'`</b>"; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal
+interval=1
+color=#707070

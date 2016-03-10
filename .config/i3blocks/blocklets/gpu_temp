@@ -1,0 +1,10 @@
+#!/bin/bash
+temp1=$(nvidia-smi -q -d TEMPERATURE -i 0 | awk '/GPU Current Temp/ {print $5}')
+temp2=$(nvidia-smi -q -d TEMPERATURE -i 1 | awk '/GPU Current Temp/ {print $5}')
+if [ $temp1 -gt 52 ]; then
+    echo "<span color='#c4a500'>$temp1°C</span>"
+elif [ $temp1 -gt 75 ]; then
+    echo "<span color='#b84131'>$temp1°C</span>"
+else
+    echo "<span color='#7da900'>$temp1°C</span>"
+fi
