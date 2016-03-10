@@ -1,0 +1,8 @@
+#!/bin/env bash
+DEFAULTPLAYER=vlc
+CLIPCONTENT=$(xclip -selection clipboard -o)
+if [[ $CLIPCONTENT != http* ]]; then
+   CLIPCONTENT=""
+   fi
+
+   livestreamer $(zenity --entry --title="Twitch VOD" --text "Enter the URL to the VOD:" --entry-text="$CLIPCONTENT") best --player-passthrough hls --player $DEFAULTPLAYER
