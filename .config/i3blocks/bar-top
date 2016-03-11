@@ -30,11 +30,6 @@ interval=600
 signal=1
 separator_block_width=20
 
-[volumelabel]
-full_text=
-color=#707070
-separator_block_width=4
-
 [volume]
 command=~/.config/i3blocks/blocklets/volume --max-volume 100#1
 interval=1

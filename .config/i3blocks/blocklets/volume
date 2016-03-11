@@ -34,15 +34,17 @@ esac
 VOLUME="$(ponymix get-volume)"
 
 if ponymix is-muted; then
-	STATE="<span color='#aa2e00'>MUTED</span>"
+    STATE="<span color='#707070'> </span><span color='#ed5466'> MUTED</span>"
 elif [ $VOLUME -ge '80' ]; then
-  STATE="<span color='#050505'>$VOLUME</span>"
+    STATE="<span color='#707070'> </span><span color='#050505'> $VOLUME</span>"
 elif [ $VOLUME -ge '50' ]; then
-  STATE="<span color='#5e5e5e'>$VOLUME</span>"
-elif [ $VOLUME -gt '20' ]; then
-  STATE="<span color='#8a8a8a'>$VOLUME</span>"
+    STATE="<span color='#707070'> </span><span color='#5e5e5e'> $VOLUME</span>"
+elif [ $VOLUME -gt '33' ]; then
+    STATE="<span color='#707070'> </span><span color='#8a8a8a'> $VOLUME</span>"
+ elif [ $VOLUME == '0' ]; then
+    STATE="<span color='#707070'> </span><span color='#b6b6b6'> $VOLUME</span>"
 else
-	STATE="<span color='#b6b6b6'>$VOLUME</span>"
+	STATE="<span color='#707070'> </span><span color='#b6b6b6'> $VOLUME</span>"
 fi
 
 echo "$STATE"	# full_text
