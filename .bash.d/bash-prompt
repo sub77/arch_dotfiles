@@ -38,7 +38,7 @@ function __parse_git_dirty {
         bits="x${bits}"
     fi
     if [ "${dirty}" == "0" ]; then
-        bits="!${bits}"
+        bits="●${bits}"
     fi
 
     if [ ! "${bits}" == "" ]; then
@@ -47,10 +47,10 @@ function __parse_git_dirty {
 }
 
 function __prompt_ps1 {
-    local sep=""
-    local alt_sep=""
+    local sep=""
+    local alt_sep=""
 
-    printf "%s" "${ALT_YELLOW_BG}${WHITE} \u@\h $(__bg_color 236)${ALT_YELLOW}${sep}${BLACK} \w "
+    printf "%s" "${WHITE_BG}${BLACK} \t ${BLACK_BG}${GREEN} \u${BLUE}@${WHITE}\h ${ALT_BLACK_BG}${ALT_YELLOW}${sep}${BLACK} \w "
 
     local stat
     if stat=$(__parse_git_branch); then
@@ -63,7 +63,7 @@ function __prompt_ps1 {
 }
 
 function __prompt {
-    PS1="$(__prompt_ps1)"
+    PS1="$(__prompt_ps1)\$ "
 }
 
 if [[ ! "$PROMPT_COMMAND" == *__prompt* ]]; then

@@ -81,7 +81,7 @@ prompt_git() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment yellow black
+      prompt_segment yellow white
     else
       prompt_segment green black
     fi
@@ -105,7 +105,7 @@ prompt_git() {
     zstyle ':vcs_info:*' formats ' %u%c'
     zstyle ':vcs_info:*' actionformats ' %u%c'
     vcs_info
-    echo -n "${ref/refs\/heads\//⇅ }${vcs_info_msg_0_%% }${mode}"
+    echo -n "${ref/refs\/heads\// }${vcs_info_msg_0_%% }${mode}"
   fi
 }
 
@@ -146,7 +146,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-        prompt_segment 8 0 '%~'
+        prompt_segment 14 0 '%~'
 }
 
 # Virtualenv: current working virtualenv
