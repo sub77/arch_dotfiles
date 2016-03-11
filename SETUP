@@ -46,6 +46,8 @@ ask "Install symlink for .Xresources?" Y && ln -sfn ${dir}/.Xresources $HOME/.Xr
 ask "Install symlink for .termite?" Y && ln -sfn ${dir}/.config/termite $HOME/.config/termite
 ask "Install symlink for .vim?" Y && ln -sfn ${dir}/.vim $HOME/.vim && ln -sfn ${dir}/.vimrc $HOME/.vimrc
 ask "Install symlink for .colors?" Y && ln -sfn ${dir}/.config/colors $HOME/.config/colors
+ask "Install symlink for .atom?" Y && ln -sfn ${dir}/.atom $HOME/.atom
+ask "Install symlink for .colors?" Y && ln -sfn ${dir}/.config/sublime-text-* $HOME/.config
 ask "Install symlink for .i3?" Y && ln -sfn ${dir}/.config/i3 $HOME/.config/i3
 ask "Install symlink for .i3blocks?" Y && ln -sfn ${dir}/.config/i3blocks $HOME/.config/i3blocks
 ask "Install symlink for .compton.conf?" Y && ln -sfn ${dir}/.compton.conf $HOME/.compton.conf
