@@ -46,11 +46,20 @@ function __parse_git_dirty {
     fi
 }
 
+exitstatus()
+{
+    if [[ $? == 0 ]]; then
+        echo ':)'
+    else
+        echo 'D:'
+    fi
+}
+
 function __prompt_ps1 {
     local sep=""
     local alt_sep=""
 
-    printf "%s" "${WHITE_BG}${BLACK} \t ${BLACK_BG}${GREEN} \u${BLUE}@${WHITE}\h ${ALT_BLACK_BG}${ALT_YELLOW}${sep}${BLACK} \w "
+    printf "%s" "${WHITE_BG}${BLACK} \t ${BLACK_BG}${GREEN} \u${BLUE}@${WHITE}\H ${ALT_PURPLE_BG}${BLACK} \w "
 
     local stat
     if stat=$(__parse_git_branch); then

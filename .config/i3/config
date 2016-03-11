@@ -89,6 +89,7 @@ assign 	[class="(?i)thunderbird"]	$ws_mail
 assign 	[class="TeamSpeak 3"] 		$ws_voice
 assign 	[title="ncmpcpp"]			$ws_music
 assign 	[class="(?i)atom"]			$ws_textedit
+assign	[class="(?i)subl3"]			$ws_textedit
 assign 	[class="(?i)smuxi-frontend-gnome"]	$ws_chat
 #assign	[title="SysUPDATE"]			$ws_update
 

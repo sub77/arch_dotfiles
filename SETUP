@@ -56,4 +56,3 @@ ask "Install symlink for .gtk-3.0?" Y && ln -sfn ${dir}/.config/gtk-3.0/gtk.css 
 ask "Install symlink for .caffeine?" Y && ln -sfn ${dir}/.config/caffeine $HOME/.config/caffeine
 ask "Install symlink for .redshift?" Y && ln -sfn ${dir}/.config/redshift.conf $HOME/.config/redshift.conf
 ask "Install symlink for .pcmanfm?" Y && ln -sfn ${dir}/.config/pcmanfm $HOME/.config/pcmanfm
-ask "Install symlink for .thunar?" Y && ln -sfn ${dir}/.config/Thunar $HOME/.config/Thunar
