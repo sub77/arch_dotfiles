@@ -76,7 +76,7 @@ workspace 		$ws_games		output DP-0
 ## Scratchpad
 for_window 	[Title="CommandLine"] move scratchpad; [title="CommandLine"] scratchpad show; [title="CommandLine"] border normal
 for_window 	[class="(?i)pcmanfm"] move scratchpad; [class="(?i)pcmanfm"] scratchpad show; [class="(?i)pcmanfm"] border none
-#for_window [class="(?i)thunar"] move scratchpad; [class="(?i)thunar"] scratchpad show; [class="(?i)thunar"] border none
+for_window [class="(?i)thunar"] move scratchpad; [class="(?i)thunar"] scratchpad show; [class="(?i)thunar"] border none
 
 ## App Bindings
 assign 	[Title="Steam"]				$ws_games
