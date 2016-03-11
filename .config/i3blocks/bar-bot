@@ -72,7 +72,7 @@ full_text=HDD1:
 separator_block_width=2
 
 [disk]
-instance=/home/timo/Dokumente
+instance=$HOME/Dokumente
 interval=30
 color=#efefef
 separator_block_width=20

@@ -1,0 +1,281 @@
+#!/usr/bin/env bash
+msg(){
+    echo "$(tput bold)$(tput setaf 4)>>$(tput sgr0) ${@}"
+}
+
+
+err(){
+    echo "$(tput bold)$(tput setaf 1)!!$(tput sgr0) ${@}"
+}
+
+ask() {
+  # http://djm.me/ask
+  while true; do
+
+    if [ "${2:-}" = "Y" ]; then
+      prompt="Y/n"
+      default=Y
+    elif [ "${2:-}" = "N" ]; then
+      prompt="y/N"
+      default=N
+    else
+      prompt="y/n"
+      default=
+    fi
+
+    # Ask the question
+    read -p "$(tput bold)$(tput setaf 3)?$(tput sgr0) $1 ($prompt): " REPLY
+
+    # Default?
+    if [ -z "$REPLY" ]; then
+       REPLY=$default
+    fi
+
+    # Check if the reply is valid
+    case "$REPLY" in
+      Y*|y*) return 0 ;;
+      N*|n*) return 1 ;;
+    esac
+
+  done
+}
+
+if [ "$(id -u)" = "0" ]; then
+    err "Can't run as root. Aborting."
+    exit 2
+fi
+
+if [ /usr/bin/pacaur ]; then
+    msg "installing pacaur ..."
+    mkdir -pv ~/tmp && cd ~/tmp
+    if [ ! /usr/bin/cower ]; then
+        msg "cower not found. installing cower first ..."
+        curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/cower.tar.gz && tar zxvf cower.tar.gz
+        cd cower && gpg --keyserver pgp.mit.edu --recv-keys F56C0C53 && makepkg -si && cd ~/tmp
+    fi
+    curl -O https://aur.archlinux.org/cgit/aur.git/snapshot/pacaur.tar.gz && tar zxvf pacaur.tar.gz
+    cd pacaur && makepkg -si && cd ~/
+    msg "cleaning up ...
+"
+    rm -r ~/tmp
+fi
+
+
+ask "Install Laptops dependencies?" N && laptop-dependencies
+laptop-dependencies() {
+    msg "Installing drivers and X11 ..."
+    pacaur --noconfirm --noedit -S \
+        blueman \
+        bluez \
+        bluez-utils \
+        mesa \
+        network-manager-applet \
+        pulseaudio \
+        pulseaudio-alsa \
+        pulseaudio-bluetooth \
+        xf86-input-mouse \
+        xf86-video-intel \
+        xorg-server \
+        xorg-server-common \
+        xorg-server-utils \
+        xorg-xcalc \
+        xorg-xinit
+}
+
+ask "Install Workstation's dependencies?" N && desktop-dependencies
+desktop-dependencies() {
+    msg "Installing drivers and X11 ..."
+    pacaur --noconfirm --noedit -S \
+        ifenslave \
+        intel-ucode \
+        nvidia \
+        nvidia-libgl \
+        nvidia-settings \
+        nvidia-utils \
+        pulseaudio \
+        pulseaudio-alsa \
+        xf86-input-mouse \
+        xorg-server \
+        xorg-server-common \
+        xorg-server-utils \
+        xorg-xinit
+        ask "Copy xorg config to /etc/X11?" && sudo mv /etc/X11/xorg.conf /etc/X11/xorg.orig && sudo cp xorg.conf /etc/X11/xorg.conf
+}
+
+msg "Installing filesystem drivers ..."
+pacaur --noconfirm --noedit -S \
+    btrfs-progs \
+    cryptsetup \
+    ecryptfs-utils \
+    exfat-utils \
+    gvfs-mtp \
+    gvfs-nfs \
+    gvfs-smb \
+    jfsutils \
+    libmtp \
+    mdadm \
+    nfs-utils \
+    ntfs-3g \
+    sshfs \
+    thunar-shares-plugin \
+    thunar-volman \
+    udiskie \
+    udisks2
+
+msg "Installing terminals ..."
+pacaur --noconfirm --noedit -S \
+    antigen-git \
+    bash-completion \
+    rxvt-unicode \
+    termite \
+    termite-terminfo \
+    tmux \
+    urxvt-perls-git \
+    zsh \
+    zsh-completions \
+    highlight
+
+msg "Installing Python and i3-WM dependencies ..."
+pacaur --noconfirm --noedit -S \
+    flex \
+    libev \
+    perl-anyevent-i3 \
+    perl-json-xs \
+    pygmentize \
+    python \
+    python-basiciw \
+    python-jsonpath-rw \
+    python-netifaces \
+    python-pillow \
+    python-pip \
+    python-setuptools \
+    python-urllib3 \
+    python-yaml \
+    python2-pip \
+    python2-suds \
+    startup-notification \
+    xcb-util-cursor \
+    xcb-util-keysyms \
+    xcb-util-wm \
+    yajl
+
+msg "Installing i3-WM ..."
+pacaur --noconfirm --noedit -S \
+    compton-git \
+    dmenu2 \
+    dunst \
+    feh \
+    gsimplecal \
+    i3-gaps-next-git \
+    i3blocks-gaps-git \
+    i3lock-color-git \
+    imagemagick \
+    tk \
+    unclutter-xfixes-git \
+    xss-lock \
+    xtitle-git \
+    ponymix
+
+msg "Installing tools and programs ..."
+pacaur --noconfirm --noedit -S \
+    acpi \
+    alsa-plugins \
+    alsa-utils \
+    android-tools \
+    arandr \
+    aspell-de \
+    aspell-en \
+    atril \
+    caffeine-ng-git \
+    eom \
+    evince \
+    file-roller \
+    firefox \
+    flashplugin \
+    gimp \
+    gnome-keyring \
+    gparted \
+    gstreamer \
+    hddtemp \
+    htop \
+    htop \
+    hwinfo \
+    icedtea-web \
+    iftop \
+    iotop \
+    iperf \
+    jre7-openjdk \
+    kde-gtk-config \
+    libreoffice-fresh \
+    livestreamer \
+    lm_sensors \
+    lxappearance \
+    mlocate \
+    mpd \
+    ncmpcpp \
+    neofetch-git \
+    nmap \
+    openssh \
+    openvpn \
+    pavucontrol \
+    pcmanfm \
+    pdfsam \
+    pulseaudio-ctl \
+    qt5ct \
+    raw-thumbnailer \
+    rdesktop \
+    redshift \
+    rofi-git \
+    rsync \
+    samba \
+    scrot \
+    sddm \
+    smartmontools \
+    smuxi \
+    teamspeak3 \
+    the_silver_searcher \
+    thefuck \
+    thunar \
+    thunar-archive-plugin \
+    thunar-media-tags-plugin \
+    thunderbird \
+    thunderbird-enigmail \
+    tree \
+    tumbler \
+    unace \
+    unrar \
+    unzip \
+    usbutils \
+    vim \
+    vim-airline \
+    vim-fugitive \
+    vim-lightline-git \
+    vim-nerdtree \
+    vim-youcompleteme-git \
+    vlc \
+    wget \
+    x264 \
+    xarchiver \
+    xclip \
+    xdg-utils \
+    xdotool \
+    xedgewarp-git \
+    xorg-xcalc \
+    xsensors \
+    xtitle-git \
+    youtube-dl
+
+msg "Installing themes and fonts ..."
+pacaur --noconfirm --noedit -S \
+    gtk-theme-arc-git \
+    paper-icon-theme-git \
+    sddm-numix-theme-git \
+    ohsnap \
+    ttf-font-awesome \
+    ttf-font-icons \
+    ttf-hack \
+    ttf-roboto \
+    ttf-dejavu \
+    ttf-liberation \
+    ttf-roboto-mono \
+    powerline-fonts-git

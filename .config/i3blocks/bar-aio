@@ -95,7 +95,7 @@ full_text=HDD1:
 separator_block_width=-4
 
 [disk]
-instance=/home/timo/Documents
+instance=$HOME/Dokumente
 interval=30
 color=#a1a1a1
 
