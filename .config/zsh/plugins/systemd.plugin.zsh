@@ -9,3 +9,13 @@ sudo_commands=(
 
 for c in $user_commands; do; alias sc-$c="systemctl $c"; done
 for c in $sudo_commands; do; alias sc-$c="sudo systemctl $c"; done
+
+function sc-enable-now {
+    sudo systemctl enable $1
+    sudo systemctl start $1
+}
+
+function sc-disable-now {
+    sudo systemctl stop $1
+    sudo systemctl disable $1
+}

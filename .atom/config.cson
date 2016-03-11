@@ -1,0 +1,67 @@
+"*":
+  "autocomplete-plus":
+    confirmCompletion: "tab"
+  autosave:
+    enabled: true
+  "character-table": {}
+  core:
+    autoHideMenuBar: true
+    disabledPackages: [
+      "wrap-guide"
+      "markdown-writer"
+    ]
+    ignoredNames: [
+      ".adobe"
+      ".cache"
+      ".git-credential-cache"
+      ".icons"
+      ".lyrics"
+      ".macromedia"
+      ".mozilla"
+      ".node-gyp"
+      ".nv"
+      ".pan2"
+      ".password-store"
+      ".pki"
+      ".rdesktop"
+      ".thumbnails"
+      ".thunderbird"
+      ".ts3client"
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      ".snapshots"
+      ".Trash-1000"
+    ]
+    themes: [
+      "atom-visual-studio-code-light-ui"
+      "atom-light-syntax"
+    ]
+  editor:
+    fontSize: 17
+    invisibles: {}
+    showIndentGuide: true
+    softWrapHangingIndent: 5
+    tabLength: 4
+  "fuzzy-finder":
+    useAlternateScoring: false
+  "git-plus": {}
+  "markdown-preview-plus": {}
+  "markdown-writer": {}
+  "one-light-ui": {}
+  "sync-settings":
+    _analyticsUserId: ""
+    _lastBackupHash: ""
+    analytics: false
+    gistId: ""
+    personalAccessToken: ""
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
+".diff.source":
+  editor:
+    softWrapHangingIndent: 5
