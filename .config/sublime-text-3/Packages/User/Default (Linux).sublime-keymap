@@ -1,0 +1,8 @@
+[
+	{ "keys": ["super+c"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+    { "keys": ["super+shift+o"], "command": "side_bar_folders_quick_switch" },
+    { "keys": ["f12"], "command": "side_bar_open_in_browser" , "args":{"paths":[], "type":"testing", "browser":""} },
+    { "keys": ["alt+f12"], "command": "side_bar_open_in_browser", "args":{"paths":[], "type":"production", "browser":""} },
+    { "keys": ["super+t"], "command": "side_bar_new_file2" },
+    { "keys": ["f2"], "command": "side_bar_rename" },
+]

@@ -1,0 +1,545 @@
+{
+	"folder_history":
+	[
+		"/home/timo/Dokumente",
+		"/home/timo/Github"
+	],
+	"last_version": 3103,
+	"last_window_id": 3,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 957.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 520.0,
+				"last_filter": "Package Control: ",
+				"selected_items":
+				[
+					[
+						"Package Control: ",
+						"Package Control: Install Package"
+					],
+					[
+						"Package Control:",
+						"Package Control: List Packages"
+					]
+				],
+				"width": 648.0
+			},
+			"console":
+			{
+				"height": 176.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/timo/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+				"/home/timo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+				"/home/timo/.config/sublime-text-3/Packages/SideBarFolders/Side Bar Folders.sublime-settings",
+				"/home/timo/.config/sublime-text-3/Packages/User/Side Bar Folders.sublime-settings",
+				"/home/timo/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+				"/home/timo/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+				"/home/timo/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+				"/home/timo/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings"
+			],
+			"find":
+			{
+				"height": 45.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"ctrl+shift+c"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 30.0
+			},
+			"input":
+			{
+				"height": 40.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 56.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": true,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 275.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 1860.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": ".gitignore",
+					"settings":
+					{
+						"buffer_size": 38,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/timo/Github/4f401e0097f185ba34eb/00-wiki-arch_snapper.md",
+					"settings":
+					{
+						"buffer_size": 10368,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": ".bash.d/bash-prompt",
+					"settings":
+					{
+						"buffer_size": 2265,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": ".config/zsh/themes/own-agnosta-light.zsh",
+					"settings":
+					{
+						"buffer_size": 6614,
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 520.0,
+				"last_filter": "mar",
+				"selected_items":
+				[
+					[
+						"mar",
+						"Markdown Preview: Preview in Browser"
+					],
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						"markd",
+						"Markdown Preview: Preview in Browser"
+					],
+					[
+						"Package Control: ",
+						"Package Control: Install Package"
+					],
+					[
+						"Package Control:",
+						"Package Control: List Packages"
+					]
+				],
+				"width": 856.0
+			},
+			"console":
+			{
+				"height": 176.0,
+				"history":
+				[
+					"side_bar_open_in_browser",
+					"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"expanded_folders":
+			[
+				"/home/timo/Github",
+				"/home/timo/Github/4f401e0097f185ba34eb",
+				"/home/timo/Github/dotfiles",
+				"/home/timo/Github/dotfiles/.bash.d",
+				"/home/timo/Github/dotfiles/.config",
+				"/home/timo/Github/dotfiles/.config/i3",
+				"/home/timo/Github/dotfiles/.config/zsh",
+				"/home/timo/Github/dotfiles/.config/zsh/aliases",
+				"/home/timo/Github/dotfiles/.config/zsh/themes"
+			],
+			"file_history":
+			[
+				"/home/timo/Github/dotfiles/.config/zsh/shortcuts.zsh",
+				"/home/timo/Github/dotfiles/.config/zsh/aliases/workstation.zsh",
+				"/home/timo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+				"/home/timo/Github/dotfiles/test",
+				"/home/timo/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+				"/home/timo/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+				"/home/timo/Github/dotfiles/.config/i3/config",
+				"/home/timo/.config/sublime-text-3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+				"/home/timo/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+				"/home/timo/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+				"/home/timo/Github/test",
+				"/home/timo/Github/testing",
+				"/home/timo/.config/sublime-text-3/Packages/SideBarEnhancements/Default (Linux).sublime-keymap",
+				"/home/timo/.config/sublime-text-3/Packages/SideBarFolders/Side Bar Folders.sublime-settings",
+				"/home/timo/.config/sublime-text-3/Packages/User/Side Bar Folders.sublime-settings",
+				"/home/timo/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+				"/home/timo/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings"
+			],
+			"find":
+			{
+				"height": 45.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"parse_git_dir",
+					"ctrl+t",
+					"ctrl+shift+c"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"selected": 1,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": ".gitignore",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 38,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										38,
+										38
+									]
+								],
+								"settings":
+								{
+									"side_bar_folders_auto_load_folder": 1,
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/timo/Github/4f401e0097f185ba34eb/00-wiki-arch_snapper.md",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 10368,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										991,
+										991
+									]
+								],
+								"settings":
+								{
+									"parser": "github",
+									"side_bar_folders_auto_load_folder": 1,
+									"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+									"target": "disk"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": ".bash.d/bash-prompt",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 2265,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"side_bar_folders_auto_load_folder": 1,
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 3,
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": ".config/zsh/themes/own-agnosta-light.zsh",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 6614,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										3663,
+										3663
+									]
+								],
+								"settings":
+								{
+									"side_bar_folders_auto_load_folder": 1,
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 1612.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 30.0
+			},
+			"input":
+			{
+				"height": 40.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,0,0,0,0,3870,48,5730,1050,5760,1080",
+			"project": "SETUP.sublime-project",
+			"replace":
+			{
+				"height": 56.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": true,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 275.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 1,
+			"workspace_name": "/home/timo/Github/dotfiles/SETUP.sublime-workspace"
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+			"/home/timo/Github/dotfiles/SETUP.sublime-workspace"
+		]
+	}
+}
