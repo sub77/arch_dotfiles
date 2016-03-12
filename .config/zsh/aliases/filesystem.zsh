@@ -20,6 +20,7 @@ dls () {
 alias mkdir='mkdir -pv'
 
 # Directory listing
+alias ls='ls  --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias la='ls -AF'
 alias l='ls -lhF'		           		        # No hidden
 alias ll='ls -lhaF'		                  	        # +Hidden
@@ -28,4 +29,4 @@ alias llt='ls -lhatF'		                	        # +Hidden +Sort by modified time
 alias llist='ls -m'                                             # List files in a comma-separated line
 alias lllist='ls -ma'                                           # List all files in a comma-separated line
 alias tree='tree -AC'                                           # Print pretty lines colourise
-alias t='tree -AC --du --dirsfirst'
+alias t='tree -h --du --dirsfirst'
