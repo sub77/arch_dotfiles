@@ -1,46 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-err(){
-    echo "$(tput bold)$(tput setaf 1)!!$(tput sgr0) ${@}"
-}
-
-ask() {
-  # http://djm.me/ask
-  while true; do
-
-    if [ "${2:-}" = "Y" ]; then
-      prompt="Y/n"
-      default=Y
-    elif [ "${2:-}" = "N" ]; then
-      prompt="y/N"
-      default=N
-    else
-      prompt="y/n"
-      default=
-    fi
-
-    # Ask the question
-    read -p "$(tput bold)$(tput setaf 3)?$(tput sgr0) $1 ($prompt): " REPLY
-
-    # Default?
-    if [ -z "$REPLY" ]; then
-       REPLY=$default
-    fi
-
-    # Check if the reply is valid
-    case "$REPLY" in
-      Y*|y*) return 0 ;;
-      N*|n*) return 1 ;;
-    esac
-
-  done
-}
-
-if [ "$(id -u)" = "0" ]; then
-    err "Can't run as root. Aborting."
-    exit 2
-fi
+source functions
 
 dir=`pwd`
 if [ ! -e "${dir}/setup.sh" ]; then
@@ -48,15 +9,14 @@ if [ ! -e "${dir}/setup.sh" ]; then
   exit 2
 fi
 
-dir="${dir}/.."
-
+dir="${dir%/*}"
 distro=`lsb_release -si`
 if [ ! -f "dependencies-${distro}" ]; then
   echo "Could not find file with dependencies for distro ${distro}. Aborting."
   exit 2
 fi
 
-ask "Install packages?" Y && bash ./dependencies-${distro}
+ask "Install packages?" N && bash ./dependencies-${distro}
 
 ask "Install symlink for .gitconfig?" Y && ln -sfn ${dir}/.gitconfig $HOME/.gitconfig
 ask "Install symlink for .bashrc?" Y && ln -sfn ${dir}/.bashrc $HOME/.bashrc && ln -sfn ${dir}/.bash.d $HOME/.bash.d
