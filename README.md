@@ -62,3 +62,9 @@ To get the sensor reading right, execute:
 ```
 sudo sensors-detect
 ```
+
+## Use script for other users
+
+This might help with keeping dotfiles up to date.
+
+Replace 

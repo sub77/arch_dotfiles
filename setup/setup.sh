@@ -9,14 +9,14 @@ if [ ! -e "${dir}/setup.sh" ]; then
   exit 2
 fi
 
-dir="${dir%/*}"
 distro=`lsb_release -si`
 if [ ! -f "dependencies-${distro}" ]; then
   echo "Could not find file with dependencies for distro ${distro}. Aborting."
   exit 2
 fi
-
 ask "Install packages?" N && bash ./dependencies-${distro}
+
+dir="${dir%/*s}"
 
 ask "Install symlink for .gitconfig?" Y && ln -sfn ${dir}/.gitconfig $HOME/.gitconfig
 ask "Install symlink for .bashrc?" Y && ln -sfn ${dir}/.bashrc $HOME/.bashrc && ln -sfn ${dir}/.bash.d $HOME/.bash.d
