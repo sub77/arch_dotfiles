@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+
+
+
+
 msg(){
     echo "$(tput bold)$(tput setaf 4)>>$(tput sgr0) ${@}"
 }
-
 
 err(){
     echo "$(tput bold)$(tput setaf 1)!!$(tput sgr0) ${@}"
@@ -60,9 +63,9 @@ if [ ! /usr/bin/pacaur ]; then
     rm -r ~/tmp
 fi
 
-
-install_laptop() {
+laptop_dependencies() {
     msg "Installing drivers and X11 ..."
+    sleep 2
     pacaur --noconfirm --noedit -S \
     blueman \
     bluez \
@@ -80,27 +83,30 @@ install_laptop() {
     xorg-xcalc \
     xorg-xinit
 }
-ask "Install Laptops dependencies?" N && install_laptop
 
-ask "Install Workstation's dependencies?" N && desktop-dependencies
-desktop-dependencies() {
+desktop_dependencies() {
     msg "Installing drivers and X11 ..."
+    sleep 2
     pacaur --noconfirm --noedit -S \
-        ifenslave \
-        intel-ucode \
-        nvidia \
-        nvidia-libgl \
-        nvidia-settings \
-        nvidia-utils \
-        pulseaudio \
-        pulseaudio-alsa \
-        xf86-input-mouse \
-        xorg-server \
-        xorg-server-common \
-        xorg-server-utils \
-        xorg-xinit
-        ask "Copy xorg config to /etc/X11?" && sudo mv /etc/X11/xorg.conf /etc/X11/xorg.orig && sudo cp xorg.conf /etc/X11/xorg.conf
+    ifenslave \
+    intel-ucode \
+    nvidia \
+    nvidia-libgl \
+    nvidia-settings \
+    nvidia-utils \
+    pulseaudio \
+    pulseaudio-alsa \
+    xf86-input-mouse \
+    xorg-server \
+    xorg-server-common \
+    xorg-server-utils \
+    xorg-xinit
+    ask "Copy xorg config to /etc/X11?" && sudo mv /etc/X11/xorg.conf /etc/X11/xorg.orig && sudo cp xorg.conf /etc/X11/xorg.conf
 }
+
+ask "Install Laptops dependencies?" N && laptop_dependencies
+
+ask "Install Workstation's dependencies?" N && desktop_dependencies
 
 msg "Installing filesystem drivers ..."
 sleep 2
