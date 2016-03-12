@@ -17,7 +17,8 @@ fi
 
 ask "Install packages?" N && bash ./dependencies-${distro}
 
-dir="${dir%/*s}"
+dir="${dir%/*}"
+echo $dir
 
 ask "Install symlink for .gitconfig?" Y && ln -sfn ${dir}/.gitconfig $HOME/.gitconfig
 ask "Install symlink for .bashrc?" Y && ln -sfn ${dir}/.bashrc $HOME/.bashrc && ln -sfn ${dir}/.bash.d $HOME/.bash.d
