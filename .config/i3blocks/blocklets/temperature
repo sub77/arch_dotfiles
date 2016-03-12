@@ -60,11 +60,11 @@ $temperature eq -9999 and die 'Cannot find temperature';
 
 # Print color, if needed
 if ($temperature >= $t_crit) {
-    print "$temperature°C\n#ed5466" x2;
+    print "$temperature°C\n#e24535" x2;
 } elsif ($temperature >= $t_warn) {
-    print "$temperature°C\n#f4c728" x2;
+    print "$temperature°C\n#f39c12" x2;
 } else {
-    print "$temperature°C\n#99ca64" x2;
+    print "$temperature°C\n#36b66c" x2;
 }
 
 exit 0;

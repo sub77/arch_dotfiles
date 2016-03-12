@@ -6,7 +6,7 @@ list=($(pacaur -Quq))
 size=${#list[@]}
 
 if [ "$size" -ge '1' ]; then
-        echo "<span color='#4ec2e8'></span>   <span color='#707070'>$size</span>"
+        echo "<span color='#42accf'></span>   <span color='#707070'>$size</span>"
         case $BLOCK_BUTTON in
                 1 ) termite -t SysUPDATE -e "bash -c ~/.config/i3blocks/blocklets/pacupdate.sh"
         esac

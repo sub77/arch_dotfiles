@@ -9,23 +9,23 @@ color0="#efefef"
 color8="#b3b3b3"
 
 # red
-color1="#ef6b7b"
-color9="#ed5466"
+color1="#f15370"
+color9="#e24535"
 
 # green
 color2="#a1d569"
-color10="#99ca64"
+color10="#36b66c"
 
 # yellow
-color3="#f5ce35"
-color11="#f4c728"
+color3="#f1c40f"
+color11="#f39c12"
 
 # blue
-color4="#4ec2e8"
+color4="#4cb9dd"
 color12="#42accf"
 
 # magenta
-color5="#f6bcce"
+color5="#dd94ab"
 color13="#dc7b99"
 
 # cyan
@@ -34,4 +34,4 @@ color14="#57b2b0"
 
 # white
 color7="#707070"
-color15="#909090"
+color15="#"

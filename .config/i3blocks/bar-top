@@ -9,7 +9,7 @@ markup=pango
 
 [window label]
 full_text=
-color=#4ec2e8
+color=#42accf
 
 [window]
 command=xtitle -s

@@ -55,9 +55,9 @@ if __name__ == '__main__':
         email2.readMail()
     elif command == 'get-unseen':
         if email1.checkMail() >= int('1'):
-            print ("<span color='#4ec2e8'> </span>","<span color='#707070'>",email1.checkMail() + email2.checkMail()," </span>")
+            print ("<span color='#4cb9dd'> </span>","<span color='#707070'>",email1.checkMail() + email2.checkMail()," </span>")
         elif email2.checkMail() >= int('1'):
-            print ("<span color='#4ec2e8'> </span>","<span color='#707070'>",email2.checkMail()," </span>")
+            print ("<span color='#4cb9dd'> </span>","<span color='#707070'>",email2.checkMail()," </span>")
         else:
             print ("<span color='#b3b3b3'> </span>","<span color='#b3b3b3'>",email1.checkMail() + email2.checkMail()," </span>")
     else:
