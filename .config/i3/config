@@ -196,7 +196,7 @@ bindsym $mod+shift+a		move scratchpad
 bindsym $mod+Shift+s 		sticky toggle
 
 ## Fullscreen Modifier
-bindsym $mod+y 				fullscreen disable; floating enable; resize set 900 506; sticky enable; move window to position 4856 25
+bindsym $mod+y 				fullscreen disable; floating enable; resize set 900 506; sticky enable; move window to position 5 25
 
 ## Change container focus
 bindsym $mod+k 				focus up
