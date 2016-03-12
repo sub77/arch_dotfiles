@@ -72,7 +72,7 @@ ask "Install symlink for .compton.conf?" Y && ln -sfn ${dir}/.compton.conf $HOME
 ask "Install symlink for .dunst?" Y && ln -sfn ${dir}/.config/dunst $HOME/.config/dunst
 ask "Install symlink for .gsimplecal?" Y && ln -sfn ${dir}/.config/gsimplecal $HOME/.config/gsimplecal
 ask "Install symlink for .gtkrc-2.0?" Y && ln -sfn ${dir}/.gtkrc-2.0 $HOME/.gtkrc-2.0
-ask "Install symlink for .gtk-3.0?" Y && ln -sfn ${dir}/.config/gtk-3.0/gtk.css $HOME/.config/gtk-3.0/gtk.css && ln -sfn ${dir}/.config/gtk-3.0/settings.ini $HOME/.config/gtk-3.0/settings.ini
+ask "Install symlink for .gtk-3.0?" Y && ln -sfn ${dir}/.config/gtk-3.0/gtk.css $HOME/.config/gtk-3.0/gtk.css && mkdir -p $HOME/.config/gtk-3.0 && ln -sfn ${dir}/.config/gtk-3.0/settings.ini $HOME/.config/gtk-3.0/settings.ini
 ask "Install symlink for .caffeine?" Y && ln -sfn ${dir}/.config/caffeine $HOME/.config/caffeine
 ask "Install symlink for .redshift?" Y && ln -sfn ${dir}/.config/redshift.conf $HOME/.config/redshift.conf
 ask "Install symlink for .pcmanfm?" Y && ln -sfn ${dir}/.config/pcmanfm $HOME/.config/pcmanfm
