@@ -82,6 +82,7 @@ laptop_dependencies() {
     xorg-server-utils \
     xorg-xcalc \
     xorg-xinit
+    msg "You should consider a REBOOT after you are done."
 }
 
 desktop_dependencies() {
