@@ -152,6 +152,7 @@ pacaur --noconfirm --noedit -S \
     arandr \
     aspell-de \
     aspell-en \
+    atom-editor \
     atril \
     caffeine-ng-git \
     eom \
