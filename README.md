@@ -4,6 +4,32 @@ Here are my dotfiles for my i3-WM setup.
 
 # Installation Notes
 
+## SDDM
+
+I use SDDM to control logins and WM. To enable:
+
+```
+systemctl start sddm.service
+systemctl enable sddm.service
+```
+
+To enable the theme `sddm-numix-theme-git` edit `/etc/sddm.conf`
+
+```
+[Theme]
+Current=numix
+```
+
+To autologin your user add:
+
+```
+#/etc/sddm.conf
+...
+[Autologin]
+User=username
+Session=i3
+```
+
 To install this set of dotfiles cd into `dotfiles/setup` and execute the installation script `setup.sh`.
 
 > For a basic Arch Linux installation on _encrypted_ `BTRFS`  check my notes [here](https://gist.github.com/broedli/5604637d5855bef68f3e) and [here](https://gist.github.com/broedli/4f401e0097f185ba34eb).
@@ -35,23 +61,4 @@ To get the sensor reading right, execute:
 
 ```
 sudo sensors-detect
-```
-
-## SDDM
-
-To enable the theme `sddm-numix-theme-git` edit `/etc/sddm.conf`
-
-```
-[Theme]
-Current=numix
-```
-
-To autologin your user add:
-
-```
-#/etc/sddm.conf
-...
-[Autologin]
-User=username
-Session=i3
 ```
