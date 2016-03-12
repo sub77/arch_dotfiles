@@ -190,8 +190,10 @@ prompt_time() {
                 prompt_segment 3 0 "%D{%H:%M:%S}"
         elif [[ $fqdn == monitor.* ]]; then
                 prompt_segment 4 0 "%D{%H:%M:%S}"
-        elif [[ $fqdn == workstation.* || $fqdn == mobile.* ]]; then
+        elif [[ $fqdn == workstation.* ]]; then
                 prompt_segment 7 0 "%D{%H:%M:%S}"
+        elif [[ $fqdn == laptop.* ]]; then
+                prompt_segment 5 0 "%D{%H:%M:%S}"
         else
                 prompt_segment 15 0 "%D{%H:%M:%S}"
         fi
