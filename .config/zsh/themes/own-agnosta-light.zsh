@@ -187,15 +187,15 @@ prompt_time() {
         elif [[ $fqdn == video.* ]]; then
                 prompt_segment 2 0 "%D{%H:%M:%S}"
         elif [[ $fqdn == licht.* || $fqdn == ton.* ]]; then
-                prompt_segment 3 0 "%D{%H:%M:%S}"
+                prompt_segment 10 0 "%D{%H:%M:%S}"
         elif [[ $fqdn == monitor.* ]]; then
                 prompt_segment 4 0 "%D{%H:%M:%S}"
         elif [[ $fqdn == workstation.* ]]; then
                 prompt_segment 7 0 "%D{%H:%M:%S}"
         elif [[ $fqdn == laptop.* ]]; then
-                prompt_segment 6 0 "%D{%H:%M:%S}"
+                prompt_segment 13 0 "%D{%H:%M:%S}"
         else
-                prompt_segment 15 0 "%D{%H:%M:%S}"
+                prompt_segment 8 0 "%D{%H:%M:%S}"
         fi
 }
 
