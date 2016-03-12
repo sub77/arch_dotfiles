@@ -60,7 +60,7 @@ ask "Install packages?" Y && bash ./dependencies-${distro}
 
 ask "Install symlink for .gitconfig?" Y && ln -sfn ${dir}/.gitconfig $HOME/.gitconfig
 ask "Install symlink for .bashrc?" Y && ln -sfn ${dir}/.bashrc $HOME/.bashrc && ln -sfn ${dir}/.bash.d $HOME/.bash.d
-ask "Install symlink for .zsh?" Y && ln -sfn ${dir}/.zshrc $HOME/.zshrc && ln -sfn ${dir}/.config/zsh $HOME/.config/zsh
+ask "Install symlink for .zsh?" Y && ln -sfn ${dir}/.zshrc $HOME/.zshrc && mkdir -pv $HOME/.config && ln -sfn ${dir}/.config/zsh $HOME/.config/zsh
 ask "Install symlink for .colors?" Y && ln -sfn ${dir}/.config/colors $HOME/.config/colors
 ask "Install symlink for .vim?" Y && ln -sfn ${dir}/.vim $HOME/.vim && ln -sfn ${dir}/.vimrc $HOME/.vimrc
 ask "Install symlink for .Xresources?" Y && ln -sfn ${dir}/.Xresources $HOME/.Xresources

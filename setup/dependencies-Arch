@@ -82,7 +82,6 @@ laptop_dependencies() {
     xorg-server-utils \
     xorg-xcalc \
     xorg-xinit
-    msg "You should consider a REBOOT after you are done."
 }
 
 desktop_dependencies() {
@@ -103,6 +102,7 @@ desktop_dependencies() {
     xorg-server-utils \
     xorg-xinit
     ask "Copy xorg config to /etc/X11?" && sudo mv /etc/X11/xorg.conf /etc/X11/xorg.orig && sudo cp xorg.conf /etc/X11/xorg.conf
+    msg "You should consider a REBOOT after you are done."
 }
 
 ask "Install Laptops dependencies?" N && laptop_dependencies
