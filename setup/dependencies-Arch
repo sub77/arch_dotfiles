@@ -61,26 +61,26 @@ if [ ! /usr/bin/pacaur ]; then
 fi
 
 
-ask "Install Laptops dependencies?" N && laptop-dependencies
-laptop-dependencies() {
+install_laptop() {
     msg "Installing drivers and X11 ..."
     pacaur --noconfirm --noedit -S \
-        blueman \
-        bluez \
-        bluez-utils \
-        mesa \
-        network-manager-applet \
-        pulseaudio \
-        pulseaudio-alsa \
-        pulseaudio-bluetooth \
-        xf86-input-mouse \
-        xf86-video-intel \
-        xorg-server \
-        xorg-server-common \
-        xorg-server-utils \
-        xorg-xcalc \
-        xorg-xinit
+    blueman \
+    bluez \
+    bluez-utils \
+    mesa \
+    network-manager-applet \
+    pulseaudio \
+    pulseaudio-alsa \
+    pulseaudio-bluetooth \
+    xf86-input-mouse \
+    xf86-video-intel \
+    xorg-server \
+    xorg-server-common \
+    xorg-server-utils \
+    xorg-xcalc \
+    xorg-xinit
 }
+ask "Install Laptops dependencies?" N && install_laptop
 
 ask "Install Workstation's dependencies?" N && desktop-dependencies
 desktop-dependencies() {
