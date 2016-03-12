@@ -60,8 +60,9 @@ set $ws_terminal				"11:"
 set $ws_music					"21:"
 set $ws_voice					"22:"
 set $ws_www						"30:"
-set $ws_mail					"31:"
-set $ws_chat					"32:"
+set $ws_www2					"31:"
+set $ws_mail					"35:"
+set $ws_chat					"36:"
 set $ws_games					"40:"
 set $ws_update					"97:"
 set $ws_labs					"98:"
@@ -69,6 +70,7 @@ set $ws_vm						"99:"
 
 ## Workspace Bindings
 workspace 		$ws_home1		output DVI-I-1
+workspace		$ws_home1		output eDP1
 workspace 		$ws_home2		output DP-0
 workspace 		$ws_textedit	output HDMI-0
 workspace 		$ws_games		output DP-0
@@ -126,7 +128,7 @@ for_window	[class="(?i)Lxappearance"] floating enable
 for_window	[class="(?i)Vlc"] floating enable
 for_window	[class="(?i)Pcmanfm"] floating enable
 for_window	[class="(?i)Thunar"] floating enable
-for_window [class="(?i)eom"] floating enable
+for_window	[class="(?i)eom"] floating enable
 for_window	[window_role="page-info"] floating enable
 
 ## Disable Borders
