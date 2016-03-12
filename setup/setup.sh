@@ -36,3 +36,4 @@ ask "Install symlink for .gtk-3.0?" Y && mkdir -p $HOME/.config/gtk-3.0 && ln -s
 ask "Install symlink for .caffeine?" Y && ln -sfn ${dir}/.config/caffeine $HOME/.config/caffeine
 ask "Install symlink for .redshift?" Y && ln -sfn ${dir}/.config/redshift.conf $HOME/.config/redshift.conf
 ask "Install symlink for .pcmanfm?" Y && ln -sfn ${dir}/.config/pcmanfm $HOME/.config/pcmanfm
+ask "Create folder for your wallpapers?" Y && mkdir -p $HOME/.config/wallpapers/current
