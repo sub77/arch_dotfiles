@@ -5,6 +5,7 @@ alias mkd='mkdir'
 alias rmd='rmdir'
 alias whatsmyip='curl ipecho.net/plain; echo'
 alias whatsmynetwork='ip addr show dev'
+alias pubkey='tail -n +1 ~/.ssh/*.pub'
 
 alias -g v='vim'
 alias h='history'
