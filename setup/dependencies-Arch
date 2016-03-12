@@ -45,7 +45,7 @@ if [ "$(id -u)" = "0" ]; then
     exit 2
 fi
 
-if [ /usr/bin/pacaur ]; then
+if [ ! /usr/bin/pacaur ]; then
     msg "installing pacaur ..."
     mkdir -pv ~/tmp && cd ~/tmp
     if [ ! /usr/bin/cower ]; then
@@ -103,6 +103,7 @@ desktop-dependencies() {
 }
 
 msg "Installing filesystem drivers ..."
+sleep 2
 pacaur --noconfirm --noedit -S \
     btrfs-progs \
     cryptsetup \

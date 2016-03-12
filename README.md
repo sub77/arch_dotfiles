@@ -4,9 +4,9 @@ Here are my dotfiles for my i3-WM setup.
 
 # Installation Notes
 
-For a basic Arch Linux installation on encrypted `BTRFS`  check my notes [here](https://gist.github.com/broedli/5604637d5855bef68f3e) and [here](https://gist.github.com/broedli/4f401e0097f185ba34eb).
+To install this set of dotfiles cd into `dotfiles/setup` and execute the installation script `setup.sh`.
 
-To install this set of dotfiles cd into `setup` and execute the installation script `setup.sh`.
+> For a basic Arch Linux installation on _encrypted_ `BTRFS`  check my notes [here](https://gist.github.com/broedli/5604637d5855bef68f3e) and [here](https://gist.github.com/broedli/4f401e0097f185ba34eb).
 
 ## Atom
 
@@ -16,7 +16,7 @@ To sync your Atom dotfiles edit your `~/.atom/config.cson` and restart.
 "sync-settings":
   ...
   gistId: "<ID of your Gist, containing Atom's dotfiles>"
-  personalAccessToken: "<Github access token for Gists>"
+  personalAccessToken: "<Github access token for Gist>"
 ```
 
 ## i3blocks

@@ -37,6 +37,11 @@ ask() {
   done
 }
 
+if [ "$(id -u)" = "0" ]; then
+    err "Can't run as root. Aborting."
+    exit 2
+fi
+
 dir=`pwd`
 if [ ! -e "${dir}/setup.sh" ]; then
   err "Script not called from within repository directory. Aborting."
