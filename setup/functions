@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+textb() {
+    echo $(tput bold)${1}$(tput sgr0);
+}
+
 msg(){
     echo "$(tput bold)$(tput setaf 4)>>$(tput sgr0) ${@}"
 }

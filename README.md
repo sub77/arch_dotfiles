@@ -63,8 +63,21 @@ To get the sensor reading right, execute:
 sudo sensors-detect
 ```
 
+## i3
+
+Config looks for random file in `~/.config/wallpapers/current`
+
+```
+ln -sfn /path/to/wallpapers/*.jpg ~/.config/wallpapers/current
+```
+
 ## Use script for other users
 
 This might help with keeping dotfiles up to date.
 
-Replace 
+Keep in mind, that users actually need access to your dotfiles. May want to `chown` the dotfiles to the `users` group.
+
+```
+
+chown -R :users dotfiles
+```
