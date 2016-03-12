@@ -2,16 +2,6 @@
 set -e
 
 dir=`pwd`
-if [ ! -e "${dir}/setup.sh" ]; then
-  err "Script not called from within repository directory. Aborting."
-  exit 2
-fi
-
-distro=`lsb_release -si`
-if [ ! -f "dependencies-${distro}" ]; then
-  echo "Could not find file with dependencies for distro ${distro}. Aborting."
-  exit 2
-fi
 
 ask "Install packages?" N && bash ./dependencies-${distro}
 
