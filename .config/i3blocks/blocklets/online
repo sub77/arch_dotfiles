@@ -1,11 +1,12 @@
 #!/bin/bash
+source $HOME/.config/colors/current
 lat=$(ping -c 3 8.8.8.8 | tail -1 | awk '{print $4}' | cut -d '/' -f 2 | cut -d '.' -f 1)
 if [[ -z "$lat" ]]; then
-        echo "<span color='#b84131'>No Connection</span>"
+        echo "<span color='$color9'>No Connection</span>"
 elif [ $lat -gt '50' ]; then
-        echo "<span color='#c4a500'>$lat ms</span>"
+        echo "<span color='$color11'>$lat ms</span>"
 elif [ $lat -gt '150' ]; then
-        echo "<span color='#b84131'>$lat ms</span>"
+        echo "<span color='$color9'>$lat ms</span>"
 else
-        echo "<span color='#7da900'>$lat ms</span>"
+        echo "<span color='$color10'>$lat ms</span>"
 fi
