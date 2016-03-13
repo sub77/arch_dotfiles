@@ -26,8 +26,8 @@
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-#SEGMENT_SEPARATOR=''
 SEGMENT_SEPARATOR=''
+CURRENTUSER=$(whoami)
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -61,14 +61,14 @@ prompt_end() {
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
-        if [[ -n "$SSH_CLIENT" && "$USER" == "root" ]]; then
-                prompt_segment 0 10 "%(!.%{%F{9}%}.)$USER%{%F{4}%}@%{%F{15}%}%M"
-        elif [[ -n "$SSH_CLIENT" ]]; then
-                prompt_segment 0 10 "%(!.%{%F{10}%}.)$USER%{%F{4}%}@%{%F{15}%}%M"
-        elif [[ -z "$SSH_CLIENT" && "$USER" == "root" ]]; then
-                prompt_segment 0 10 "%(!.%{%F{1}%}.)$USER%{%F{4}%}@%{%F{15}%}%m"
+        if [[ -n $SSH_CLIENT && $UID -eq 0 ]]; then
+                prompt_segment 0 10 "%(!.%{%F{9}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%M"
+        elif [[ -n $SSH_CLIENT ]]; then
+                prompt_segment 0 10 "%(!.%{%F{13}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%M"
+        elif [[ $UID -eq 0 ]]; then
+                prompt_segment 0 10 "%(!.%{%F{9}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%m"
         else
-                prompt_segment 0 10 "%(!.%{%F{10}%}.)$USER%{%F{4}%}@%{%F{15}%}%m"
+                prompt_segment 0 10 "%(!.%{%F{13}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%m"
         fi
 }
 
@@ -146,7 +146,11 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-        prompt_segment 14 0 '%~'
+    if [[ $UID -eq 0 ]]; then
+        prompt_segment 13 0 '%~'
+    else
+        prompt_segment 12 0 '%~'
+    fi
 }
 
 # Virtualenv: current working virtualenv
@@ -165,11 +169,11 @@ prompt_status() {
         local symbols
         symbols=()
         [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
-        [[ $UID -eq 0 ]] && symbols+="%{%F{3}%}♥"
+#        [[ $UID -eq 0 ]] && symbols+="%{%F{3}%}♥"
         [[ -n $SSH_CLIENT ]] && symbols+="%{%F{2}%}↹"
         [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
-        [[ -n "$symbols" ]] && prompt_segment 255 default "$symbols"
+        [[ -n "$symbols" ]] && prompt_segment 0 default "$symbols"
 }
 
 prompt_newline() {
