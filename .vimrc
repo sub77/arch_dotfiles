@@ -3,6 +3,7 @@ filetype plugin indent on
 filetype plugin on
 syntax on
 
+set nocp
 execute pathogen#infect()
 
 let g:lightline = {
