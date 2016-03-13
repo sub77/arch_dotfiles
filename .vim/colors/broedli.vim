@@ -27,10 +27,11 @@
   let Green = "guifg=#a1d569 guibg=NONE gui=NONE ctermfg=10 ctermbg=NONE cterm=NONE"
   let Gray = "guifg=#b3b3b3 guibg=NONE gui=NONE ctermfg=8 ctermbg=NONE cterm=NONE"
   let Blue = "guifg=#58bee0 guibg=NONE gui=NONE ctermfg=12 ctermbg=NONE cterm=NONE"
-  let Pink = "guifg=#d1649c guibg=NONE gui=NONE ctermfg=4 ctermbg=NONE cterm=NONE"
-  let Purple = "guifg=#9b7adf guibg=NONE gui=NONE ctermfg=14 ctermbg=NONE cterm=NONE"
+  let Pink = "guifg=#d1649c guibg=NONE gui=NONE ctermfg=13 ctermbg=NONE cterm=NONE"
+  let Purple = "guifg=#9b7adf guibg=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE"
   let Silver = "guifg=#909090 guibg=NONE gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE"
   let White = "guifg=#ebebeb guibg=NONE gui=NONE ctermfg=0 ctermbg=NONE cterm=NONE"
+  let Yellow = "guifg=#ebebeb guibg=NONE gui=NONE ctermfg=3 ctermbg=NONE cterm=NONE"
 " }}}
 
 " Light Background: {{{
@@ -51,7 +52,7 @@
     exe "hi Include "         .Purple
     exe "hi Keyword "         .Peach
     exe "hi Label "           .Peach
-    exe "hi LineNr "          .Gray
+    exe "hi LineNr "          .Yellow
     exe "hi Macro "           .Purple
     exe "hi Noise "           .Silver
     exe "hi Normal "          .Black

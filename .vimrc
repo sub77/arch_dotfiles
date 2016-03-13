@@ -1,10 +1,13 @@
-"filetype on
-"filetype plugin indent on
-"filetype plugin on
+filetype on
+filetype plugin indent on
+filetype plugin on
 syntax on
 
 set nocp
 execute pathogen#infect()
+
+colorscheme broedli
+set background=light
 
 let g:lightline = {
     \ 'colorscheme': 'broedli',
@@ -79,7 +82,7 @@ set ignorecase
 set smartcase
 set expandtab
 set smarttab
-"set hlsearch
+set hlsearch
 set number
 set noswapfile
 set cursorline
@@ -111,9 +114,6 @@ set clipboard=unnamed
 :noremap <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.o$']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-colorscheme broedli
-set background=light
 
 function TrimWhitespace()
   %s/\s*$//
