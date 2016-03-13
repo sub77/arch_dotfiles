@@ -170,7 +170,7 @@ prompt_status() {
         symbols=()
         [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
 #        [[ $UID -eq 0 ]] && symbols+="%{%F{3}%}♥"
-        [[ -n $SSH_CLIENT ]] && symbols+="%{%F{2}%}↹"
+        [[ -n $SSH_CLIENT ]] && symbols+="%{%F{9}%}↹"
         [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
         [[ -n "$symbols" ]] && prompt_segment 0 default "$symbols"
