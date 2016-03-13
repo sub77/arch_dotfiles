@@ -2,77 +2,77 @@
 ## APPEARANCE ##
 ################
 ## Colors
-set $foreground					#707070
-set $background					#f3f3f3
-set $color0						#efefef
-set $color1						#f15370
-set $color2						#a1d569
-set $color3						#f1c40f
-set $color4						#4cb9dd
-set $color5						#dd94ab
-set $color6						#8ad4d3
-set $color7						#707070
-set $color8						#b3b3b3
-set $color9						#e24535
-set $color10					#36b66c
-set $color11					#f39c12
-set $color12					#42accf
-set $color13					#dc7b99
-set $color14					#57b2b0
-set $color15					#909090
+set $foreground				#707070
+set $background				#f3f3f3
+set $color0				#efefef
+set $color1				#f15370
+set $color2				#a1d569
+set $color3				#f1c40f
+set $color4				#4cb9dd
+set $color5				#dd94ab
+set $color6				#8ad4d3
+set $color7				#707070
+set $color8				#b3b3b3
+set $color9				#e24535
+set $color10				#36b66c
+set $color11				#f39c12
+set $color12				#42accf
+set $color13				#dc7b99
+set $color14				#57b2b0
+set $color15				#909090
 
 ## Layout Settings
 set $default_gaps_inner 		20
 set $default_gaps_outer 		10
-set $resize 					5
-set $resize_fine				1
-set $bordersize					1
-font 							pango:Roboto Mono for Powerline, Material Icons 9
-gaps inner						$default_gaps_inner
-gaps outer						$default_gaps_outer
-workspace_layout				tabbed
-focus_follows_mouse				no
-mouse_warping 					output
-new_window 						pixel 0
-smart_borders 					no_gaps
-workspace_auto_back_and_forth	yes
+set $resize 				5
+set $resize_fine			1
+set $bordersize				1
+font 					pango:Roboto Mono for Powerline, Material Icons 9
+gaps inner				$default_gaps_inner
+gaps outer				$default_gaps_outer
+workspace_layout			tabbed
+focus_follows_mouse			no
+mouse_warping 				output
+new_window 				pixel 0
+smart_borders 				no_gaps
+workspace_auto_back_and_forth   	yes
 force_display_urgency_hint 		0 ms
 focus_on_window_activation 		urgent
 
 ## Container && Windows
-#						BORDER		BACKGROUND	TEXT		INDICATOR
-client.focused	  		$color12	$color12    $color0		$color5
+#				BORDER		BACKGROUND	TEXT		INDICATOR
+client.focused	  	       	$color12	$color12        $color0         $color5
 client.unfocused		$color8 	$color8    	$foreground	$color5
-client.focused_inactive $color7		$color7		$color0		$color5
+client.focused_inactive         $color7		$color7		$color0		$color5
 client.urgent	   		$color1		$color1		$color0		$color5
 
 ## Function Keys
-set $mod 						mod1
-set $sys 						mod4
-floating_modifier				$mod
+set $mod 				mod1
+set $sys 				mod4
+floating_modifier	        	$mod
 
 ## Workspace Names
-set $ws_home1 					"1: "
-set $ws_home2 					"2: "
-set $ws_home3					"3: "
-set $ws_textedit				"10:"
-set $ws_terminal				"11:"
-set $ws_music					"21:"
-set $ws_voice					"22:"
-set $ws_www						"30:"
-set $ws_www2					"31:"
-set $ws_mail					"35:"
-set $ws_chat					"36:"
-set $ws_games					"40:"
-set $ws_update					"97:"
-set $ws_labs					"98:"
-set $ws_vm						"99:"
+set $ws_home1 				"1: "
+set $ws_home2 				"2: "
+set $ws_home3				"3: "
+set $ws_textedit			"10:"
+set $ws_terminal			"11:"
+set $ws_music				"21:"
+set $ws_voice				"22:"
+set $ws_www				"30:"
+set $ws_www2				"31:"
+set $ws_mail				"35:"
+set $ws_chat				"36:"
+set $ws_games				"40:"
+set $ws_update				"97:"
+set $ws_labs				"98:"
+set $ws_vm				"99:"
 
 ## Workspace Bindings
 workspace 		$ws_home1		output DVI-I-1
-workspace		$ws_home1		output eDP1
+#workspace		$ws_home1		output eDP1
 workspace 		$ws_home2		output DP-0
-workspace 		$ws_textedit	output HDMI-0
+workspace 		$ws_textedit    	output HDMI-0
 workspace 		$ws_games		output DP-0
 
 ## Scratchpad
