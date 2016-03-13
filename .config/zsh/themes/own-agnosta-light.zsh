@@ -1,6 +1,6 @@
 # vim:ft=zsh ts=2 sw=2 sts=2
 #
-# agnoster's Theme - https://gist.github.com/3712874
+# agnoster's Theme - https://gist.github.com/37874
 # A Powerline-inspired theme for ZSH
 #
 # # README
@@ -64,11 +64,11 @@ prompt_context() {
         if [[ -n $SSH_CLIENT && $UID -eq 0 ]]; then
                 prompt_segment 0 10 "%(!.%{%F{9}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%M"
         elif [[ -n $SSH_CLIENT ]]; then
-                prompt_segment 0 10 "%(!.%{%F{13}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%M"
+                prompt_segment 0 10 "%(!.%{%F{12}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%M"
         elif [[ $UID -eq 0 ]]; then
                 prompt_segment 0 10 "%(!.%{%F{9}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%m"
         else
-                prompt_segment 0 10 "%(!.%{%F{13}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%m"
+                prompt_segment 0 10 "%(!.%{%F{12}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%m"
         fi
 }
 
