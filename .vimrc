@@ -3,7 +3,6 @@ filetype plugin indent on
 filetype plugin on
 syntax on
 
-set nocp
 execute pathogen#infect()
 
 colorscheme broedli
@@ -47,7 +46,7 @@ let g:lightline = {
     function! LightLineFugitive()
     if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
       let _ = fugitive#head()
-      return strlen(_) ? '⭠ '._ : ''
+      return strlen(_) ? ' '._ : ''
     endif
     return ''
     endfunction
