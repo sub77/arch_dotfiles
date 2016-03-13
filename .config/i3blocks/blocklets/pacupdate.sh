@@ -12,6 +12,7 @@ msg "Processing AUR packages ..."
 sleep 1
 pacupg -a
 notify-send -u normal -c SYSTEM "All system updates are done."
+pacaur -Quq &> /dev/null
 pkill -RTMIN+1 i3blocks
 msgp "Updates are done. Please exit this terminal with any key."
 msg "Exiting ..."

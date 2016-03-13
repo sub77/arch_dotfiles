@@ -1,5 +1,11 @@
 Here are my dotfiles for my i3-WM setup.
 
+To install this set of dotfiles cd into `dotfiles/setup` and execute the installation script `setup.sh`.
+
+> For a basic Arch Linux installation on _encrypted_ `BTRFS`  check my notes [here](https://gist.github.com/broedli/5604637d5855bef68f3e) and [here](https://gist.github.com/broedli/4f401e0097f185ba34eb).
+
+Wallpaper is from [vladstudio](http://www.vladstudio.com/wallpaper/?dali).
+
 ![i3-WM Setup](http://i.imgur.com/1W0z7fq.jpg)
 
 # Installation Notes
@@ -29,10 +35,6 @@ To autologin your user add:
 User=username
 Session=i3
 ```
-
-To install this set of dotfiles cd into `dotfiles/setup` and execute the installation script `setup.sh`.
-
-> For a basic Arch Linux installation on _encrypted_ `BTRFS`  check my notes [here](https://gist.github.com/broedli/5604637d5855bef68f3e) and [here](https://gist.github.com/broedli/4f401e0097f185ba34eb).
 
 ## Atom
 
