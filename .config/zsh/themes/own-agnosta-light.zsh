@@ -62,13 +62,13 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
         if [[ -n $SSH_CLIENT && $UID -eq 0 ]]; then
-                prompt_segment 0 10 "%(!.%{%F{9}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%M"
+                prompt_segment 0 9 "%(!.%{%F{9}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%M"
         elif [[ -n $SSH_CLIENT ]]; then
-                prompt_segment 0 10 "%(!.%{%F{12}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%M"
+                prompt_segment 0 12 "%(!.%{%F{12}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%M"
         elif [[ $UID -eq 0 ]]; then
-                prompt_segment 0 10 "%(!.%{%F{9}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%m"
+                prompt_segment 0 9 "%(!.%{%F{9}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%m"
         else
-                prompt_segment 0 10 "%(!.%{%F{12}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%m"
+                prompt_segment 0 12 "%(!.%{%F{12}%}.)$CURRENTUSER%{%F{8}%}@%{%F{7}%}%m"
         fi
 }
 
@@ -191,13 +191,13 @@ prompt_time() {
         elif [[ $fqdn == video.* ]]; then
                 prompt_segment 2 0 "%D{%H:%M:%S}"
         elif [[ $fqdn == licht.* || $fqdn == ton.* ]]; then
-                prompt_segment 10 0 "%D{%H:%M:%S}"
+                prompt_segment 3 0 "%D{%H:%M:%S}"
         elif [[ $fqdn == monitor.* ]]; then
                 prompt_segment 4 0 "%D{%H:%M:%S}"
         elif [[ $fqdn == workstation.* ]]; then
                 prompt_segment 7 0 "%D{%H:%M:%S}"
         elif [[ $fqdn == laptop.* ]]; then
-                prompt_segment 13 0 "%D{%H:%M:%S}"
+                prompt_segment 6 0 "%D{%H:%M:%S}"
         else
                 prompt_segment 8 0 "%D{%H:%M:%S}"
         fi
