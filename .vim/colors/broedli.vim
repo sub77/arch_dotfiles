@@ -7,6 +7,7 @@
   let g:colors_name = "mango"
   let bgcolor = &background
   highlight clear SignColumn
+  highlight Pmenu ctermbg=8 ctermfg=0
 " }}}
 
 " Colors: {{{

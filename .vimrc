@@ -1,6 +1,6 @@
-filetype on
-filetype plugin indent on
-filetype plugin on
+"filetype on
+"filetype plugin indent on
+"filetype plugin on
 syntax on
 
 set nocp
@@ -65,11 +65,10 @@ let g:lightline = {
       return winwidth(0) > 60 ? lightline#mode() : ''
     endfunction
 
-
-
 let g:ycm_confirm_extra_conf=0
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_add_preview_to_completeopt=0
+
 set completeopt-=preview
 
 set laststatus=2
