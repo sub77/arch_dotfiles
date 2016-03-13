@@ -40,4 +40,4 @@ ask "Install symlink for $(textb .redshift)?" Y && ln -sfn ${dir}/.config/redshi
 
 ask "Install symlink for $(textb .atom)?" Y && ln -sfn ${dir}/.atom $HOME/.atom
 ask "Install symlink for $(textb .pcmanfm)?" Y && ln -sfn ${dir}/.config/pcmanfm $HOME/.config/pcmanfm
-ask "Create folder for your wallpapers?" Y && mkdir -p $HOME/.config/wallpapers/current
+ask "Create folder for your wallpapers?" N && mkdir -p $HOME/.config/wallpapers/current
