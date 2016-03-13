@@ -1,5 +1,9 @@
 Here are my dotfiles for my i3-WM setup.
 
+```
+git clone --recursive https://github.com/broedli/dotfiles.git
+```
+
 To install this set of dotfiles cd into `dotfiles/setup` and execute the installation script `setup.sh`.
 
 > For a basic Arch Linux installation on _encrypted_ `BTRFS`  check my notes [here](https://gist.github.com/broedli/5604637d5855bef68f3e) and [here](https://gist.github.com/broedli/4f401e0097f185ba34eb).
