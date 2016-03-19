@@ -94,6 +94,7 @@ assign 	[class="(?i)atom"]			$ws_textedit
 assign	[class="(?i)subl3"]			$ws_textedit
 assign 	[class="(?i)smuxi-frontend-gnome"]	$ws_chat
 #assign	[title="SysUPDATE"]			$ws_update
+assign 	[class="(?i)virt-manager"]	$ws_vm
 
 ## App Focus
 for_window	[class="(?i)teamspeak"] focus
@@ -130,6 +131,8 @@ for_window	[class="(?i)Pcmanfm"] floating enable
 for_window	[class="(?i)Thunar"] floating enable
 for_window	[class="(?i)eom"] floating enable
 for_window	[window_role="page-info"] floating enable
+for_window	[class="(?i)gnome-search-tool"] floating enable
+for_window	[title="QEMU/KVM Connection Details"] floating enable
 
 ## Disable Borders
 for_window  [class="(?i)Civ5XP"] fullscreen; [class="(?i)Civ5XP"] border none
@@ -154,7 +157,7 @@ bindsym $mod+shift+q 		exec --no-startup-id mate-system-monitor
 bindsym $sys+shift+q 		exec --no-startup-id mate-system-monitor
 bindsym Print 				exec --no-startup-id scrot $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 bindsym shift+Print 		exec --no-startup-id scrot -u $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
-bindsym ctrl+Print 			exec --no-startup-id scrot -u $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
+bindsym ctrl+Print 			exec --no-startup-id scrot -s $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 
 ## Audio keybindings
 bindsym XF86AudioRaiseVolume 	exec --no-startup-id "pulseaudio-ctl up 2"
@@ -167,8 +170,8 @@ bindsym XF86AudioNext 			exec --no-startup-id "mpc next"
 
 ## i3 Keybindings
 bindsym $mod+shift+r 		restart
-bindsym $mod+ctrl+e 		reload
-bindsym $mod+c 				exec  --no-startup-id dmenu_run -b -i -l 20
+bindsym $mod+shift+c 		reload
+bindsym $mod+c 				exec  --no-startup-id dmenu_run -i -h 20 -fn "Roboto Mono for Powerline-7" -sb "#42accf" -p "run:" -s "DP-0"
 bindsym $mod+q	 			kill
 bindsym $sys+q				kill
 bindsym $mod+shift+w 		exec --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
