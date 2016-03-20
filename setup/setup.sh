@@ -23,6 +23,7 @@ msg "Linking dotfiles from $(textb $dir) to $(textb $HOME)."
 ask "Install symlink for $(textb .gitconfig)?" Y && ln -sfn ${dir}/.gitconfig $HOME/.gitconfig
 ask "Install symlink for $(textb .bashrc)?" Y && ln -sfn ${dir}/.bashrc $HOME/.bashrc && ln -sfn ${dir}/.bash.d $HOME/.bash.d
 ask "Install symlink for $(textb .zsh)?" Y && ln -sfn ${dir}/.zshrc $HOME/.zshrc && mkdir -p $HOME/.config && ln -sfn ${dir}/.config/zsh $HOME/.config/zsh
+ask "Disable $(textb ssh-agent) on this installation?" N && sed -i 's/antigen bundle ssh-agent/#antigen bundle ssh-agent/g' $HOME/.config/zsh/antigen.zsh
 ask "Install symlink for $(textb .vim)?" Y && ln -sfn ${dir}/.vim $HOME/.vim && ln -sfn ${dir}/.vimrc $HOME/.vimrc
 ask "Install symlink for $(textb .colors)?" Y && ln -sfn ${dir}/.config/colors $HOME/.config/colors
 ask "Install symlink for $(textb .tmux)?" Y && ln -sfn ${dir}/.tmux.conf $HOME/.tmux.conf
