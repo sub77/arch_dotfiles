@@ -155,9 +155,9 @@ bindsym $mod+shift+e 		exec --no-startup-id $HOME/.config/i3/scripts/switch-open
 bindsym $sys+e 				exec --no-startup-id $HOME/.config/i3/scripts/switch-open.sh pcmanfm
 bindsym $mod+shift+q 		exec --no-startup-id mate-system-monitor
 bindsym $sys+shift+q 		exec --no-startup-id mate-system-monitor
-bindsym Print 				exec --no-startup-id scrot $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
-bindsym shift+Print 		exec --no-startup-id scrot -u $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
-bindsym ctrl+Print 			exec --no-startup-id scrot -s $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
+bindsym --release Print			exec --no-startup-id scrot $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
+bindsym --release shift+Print	exec --no-startup-id scrot -u $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
+bindsym --release ctrl+Print	exec --no-startup-id scrot -s $HOME/Bilder/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 
 ## Audio keybindings
 bindsym XF86AudioRaiseVolume 	exec --no-startup-id "pulseaudio-ctl up 2"
