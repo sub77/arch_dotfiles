@@ -1,41 +1,40 @@
 !!! Global Colors !!!
 ! special
- *.foreground:   #707070
- *.background:   #f3f3f3
- *.cursorColor:  #707070
+*.foreground:   #707070
+*.background:   #f3f3f3
+*.cursorColor:  #707070
 
-! ! black
- *.color0:       #efefef
- *.color8:       #b3b3b3
+! black
+*.color0:       #efefef
+*.color8:       #b3b3b3
 
-! ! red
- *.color1:       #ef6b7b
- *.color9:       #ed5466
+! red
+*.color1:       #f15370
+*.color9:       #e24535
 
-! ! green
- *.color2:       #a1d569
- *.color10:      #99ca64
+! green
+*.color2:       #a1d569
+*.color10:      #36b66c
 
-! ! yellow
- *.color3:       #f5ce35
- *.color11:      #f4c728
+! yellow
+*.color3:       #f1c40f
+*.color11:      #f39c12
 
-! ! blue
- *.color4:       #4ec2e8
- *.color12:      #42accf
+! blue
+*.color4:       #4cb9dd
+*.color12:      #42accf
 
-! ! magenta
- *.color5:       #f6bcce
- *.color13:      #dc7b99
+! magenta
+*.color5:       #dd94ab
+*.color13:      #dc7b99
 
-! ! cyan
- *.color6:       #8ad4d3
- *.color14:      #57b2b0
+! cyan
+*.color6:       #8ad4d3
+*.color14:      #57b2b0
 
-! ! white
- *.color7:       #707070
- *.color15:      #ffffff
-
+! white
+*.color7:       #707070
+*.color15:      #909090
 
 !!! FONTS !!!
 Xft.antialias:				true
@@ -44,10 +43,10 @@ Xft.dpi:				136
 Xft.hinting:				true
 Xft.hintstyle:				hintfull
 Xft.rgba:				rgb
-*.font: 				xft:Roboto Mono Light for Powerline:pixelsize=12:antialias=true:hinting=true
-*.boldFont: 				xft:Roboto Mono Light for Powerline:bold:pixelsize=12:antialias=true:hinting=true
-*.italicFont:				xft:Roboto Mono Light for Powerline:italic:pixelsize=12:antialias=true:hinting=true
-*.boldItalicFont:			xft:Roboto Mono Light for Powerline:bold:italic:pixelsize=12:antialias=true
+*.font: 				xft:Roboto Mono for Powerline:pixelsize=15:antialias=true:hinting=true
+*.boldFont: 				xft:Roboto Mono for Powerline:bold:pixelsize=15:antialias=true:hinting=true
+*.italicFont:				xft:Roboto Mono for Powerline:italic:pixelsize=15:antialias=true:hinting=true
+*.boldItalicFont:			xft:Roboto Mono for Powerline:bold:italic:pixelsize=15:antialias=true
 *.letterSpace:				-1
 
 !!! OPTIONS !!!
@@ -59,6 +58,7 @@ Xft.rgba:				rgb
 *.url-select.button:			1
 *.url-select.launcher:			firefox
 *.url-select.underline:			true
+URxvt.internalBorder:       20
 
 !!! URXVT EXTENSIONS !!!
 URxvt.perl-ext-common: default,matcher,selection-to-clipboard,url-select,clipboard,keyboard-select
@@ -81,16 +81,24 @@ URxvt.clipboard.pastecmd: xsel -ob
 
 !!! ROFI !!!
 rofi.modi:				window,run,ssh
-rofi.opacity:				80
-rofi.width:				30
-rofi.lines:				15
-rofi.columns:				1
-rofi.font:				DejaVu Sans Mono 7
-rofi.color-enabled:			true
-rofi.color-normal:			#000000,#a1a1a1,#0c0c0c,#1b1b1b,#8dcff0
-rofi.color-urgent:			#f1ebeb,#dc2566,#cfd0c2,#acada1,#dc2566
-rofi.color-active:			#a1a1a1,#000000,#cfd0c2,#acada1,#207383
-rofi.color-window:			#1b1b1b,#7a7a7a
+rofi.opacity:				100
+rofi.width:				460
+rofi.lines:				9
+rofi.columns:				3
+rofi.font:				Roboto Mono for Powerline 8
+
+! Use extended color scheme
+rofi.color-enabled:                  true
+! Color scheme for normal row
+rofi.color-normal:                   #f3f3f3,#707070,#f3f3f3,#42accf,#f3f3f3
+! Color scheme for urgent row
+rofi.color-urgent:                   #f3f3f3,#e24535,#f3f3f3,#42accf,#e24535
+! Color scheme for active row
+rofi.color-active:                   #f3f3f3,#c2cad0,#f3f3f3,#42accf,#c2cad0
+! Color scheme window
+rofi.color-window:                   #f3f3f3,#707070
+! Separator style (none, dash, solid)
+rofi.separator-style:                dash
 
 rofi.bw:				1
 rofi.location:				0
