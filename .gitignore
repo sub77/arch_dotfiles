@@ -1,1 +1,2 @@
 .config/i3blocks/blocklets/passfile.py
+.config/i3blocks/blocklets/__pycache__/*
