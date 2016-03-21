@@ -1,25 +1,44 @@
 # mkdir && cd
 function mcd {
-    mkdir -p "$1" && cd "$1"
+    mkdir -pv "$1" && cd "$1"
 }
 # Create a new SSH key
-function generate_rsa_ssh_key {
-        ssh-keygen -t rsa -b 4096 -o -a 100 -f $HOME/.ssh/$1;
-        echo -n "Your public key is: "
-        cat ~/.ssh/$1.pub;
+function gen_rsa-4096 {
+    if [ $# -eq 0 ]; then
+        echo "Please provide a filename for your key!"
+        return
+    fi
+    ssh-keygen -t rsa -b 4096 -o -a 100 -f $HOME/.ssh/$1;
+    echo -n "Your public key is: "
+    cat ~/.ssh/$1.pub;
 }
-function generate_ed25519_ssh_key {
-        ssh-keygen -t ed25519 -o -a 100 -f $HOME/.ssh/$1;
-        echo -n "Your public key is: "
-        cat ~/.ssh/$1.pub;
+function gen-ed25519 {
+    if [ $# -eq 0 ]; then
+        echo "Please provide a filename for your key!"
+        return
+    fi
+    ssh-keygen -t ed25519 -o -a 100 -f $HOME/.ssh/$1;
+    echo -n "Your public key is: "
+    cat ~/.ssh/$1.pub;
 }
 # function zssh {
-#         if [[ -z $1 || -z $2 ]]; then
-#                 echo "Usage of function $0:\n -->   $0 [USER] [HOSTNAME]"
-#         else
-#                 ssh -p 34017 $1@$2
-#         fi
+    # if [[ -z $1 || -z $2 ]]; then
+    #         echo "Usage of function $0:\n -->   $0 [USER] [HOSTNAME]"
+    # else
+    #         ssh -p 34017 $1@$2
+    # fi
 # }
+function termite-ssh {
+    if [ -z "$1" ]; then
+        echo "Please provide target to connect to!"
+        return
+    elif [ $1 = "help" ]; then
+        echo "USAGE: $0 [TARGET] [OPTIONS]"
+        echo "For [OPTIONS] check 'man scp'."
+        return
+    fi
+    scp $2 $3 $4 $6 /usr/share/terminfo/x/xterm-termite $1:/usr/share/terminfo/x/xterm-termite
+}
 function vcmr () {
 
         if [[ -n $GIT_DIR && -n $vcmr_COMMAND && -n $vcmr_DIRECTORY && -n $vcmr_REPO_NAME ]]; then
