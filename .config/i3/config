@@ -142,7 +142,7 @@ for_window  [class="(?i)Civ5XP"] fullscreen; [class="(?i)Civ5XP"] border none
 #################
 ## Terminals
 bindsym $mod+Return 		exec --no-startup-id termite -r 'Terminal'
-bindsym $sys+Return 		exec --no-startup-id termite -r 'Terminal'
+bindsym $sys+Return 		exec --no-startup-id urxvt -title 'URXVT Terminal'
 bindsym $mod+BackSpace 		exec --no-startup-id  $HOME/.config/i3/scripts/switch-open.sh commandline
 
 ## Programs
