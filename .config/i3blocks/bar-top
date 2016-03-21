@@ -12,7 +12,7 @@ full_text=
 color=#42accf
 
 [window]
-command=xtitle -s
+command=xtitle -s -t 32
 interval=persist
 color=#707070
 separator_block_width=25
