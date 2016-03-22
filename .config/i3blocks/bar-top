@@ -12,7 +12,7 @@ full_text=
 color=#42accf
 
 [window]
-command=xtitle -s -t 32
+command=xtitle -s -i | $HOME/.config/i3blocks/blocklets/cut-xtitle.py
 interval=persist
 color=#707070
 separator_block_width=25
