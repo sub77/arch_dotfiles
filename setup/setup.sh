@@ -9,13 +9,15 @@ if [ ! -e "${dir}/setup.sh" ]; then
   exit 2
 fi
 
+ask "install $(textb i3) and it's dependencies?" Y && install_i3wm="yes"
 distro=`lsb_release -si`
-if [ ! -f "dependencies-${distro}" ]; then
-  echo "Could not find file with dependencies for distro ${distro}. Aborting."
-  exit 2
+if [[ $install_i3wm == "yes" ]]; then
+    if [ ! -f "dependencies-${distro}" ]; then
+      echo "Could not find file with dependencies for distro ${distro}. Aborting."
+      exit 2
+    fi
+    bash ./dependencies-${distro}
 fi
-
-ask "Install packages for i3 dotfiles on $(textb $distro)?" N && bash ./dependencies-${distro}
 
 dir="${dir%/*}"
 
