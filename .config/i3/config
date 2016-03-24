@@ -407,3 +407,4 @@ exec --no-startup-id 		redshift &
 exec --no-startup-id 		caffeine -d
 exec --no-startup-id 		xset dpms 600
 exec --no-startup-id 		xss-lock -- $HOME/.config/i3/scripts/i3lock.sh $HOME/.config/i3/scripts/alt2_lock.png &
+exec --no-startup-id		ownlcoud &
