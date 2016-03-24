@@ -32,16 +32,17 @@ ask "Install symlink for $(textb .tmux)?" Y && ln -sfn ${dir}/.tmux.conf $HOME/.
 ask "Install symlink for $(textb .Xresources)?" Y && ln -sfn ${dir}/.Xresources $HOME/.Xresources
 ask "Install symlink for $(textb .termite)?" Y && ln -sfn ${dir}/.config/termite $HOME/.config/termite
 
-ask "Install symlink for $(textb .i3)?" Y && ln -sfn ${dir}/.config/i3 $HOME/.config/i3
-ask "Install symlink for $(textb .i3blocks)?" Y && ln -sfn ${dir}/.config/i3blocks $HOME/.config/i3blocks
-ask "Install symlink for $(textb .compton.conf)?" Y && ln -sfn ${dir}/.compton.conf $HOME/.compton.conf
-ask "Install symlink for $(textb .dunst)?" Y && ln -sfn ${dir}/.config/dunst $HOME/.config/dunst
-ask "Install symlink for $(textb .gsimplecal)?" Y && ln -sfn ${dir}/.config/gsimplecal $HOME/.config/gsimplecal
-ask "Install symlink for $(textb .gtkrc-2.0)?" Y && ln -sfn ${dir}/.gtkrc-2.0 $HOME/.gtkrc-2.0
-ask "Install symlink for $(textb .gtk-3.0)?" Y && mkdir -p $HOME/.config/gtk-3.0 && ln -sfn ${dir}/.config/gtk-3.0/gtk.css $HOME/.config/gtk-3.0/gtk.css && ln -sfn ${dir}/.config/gtk-3.0/settings.ini $HOME/.config/gtk-3.0/settings.ini
-ask "Install symlink for $(textb .caffeine)?" Y && ln -sfn ${dir}/.config/caffeine $HOME/.config/caffeine
-ask "Install symlink for $(textb .redshift)?" Y && ln -sfn ${dir}/.config/redshift.conf $HOME/.config/redshift.conf
-
-ask "Install symlink for $(textb .atom)?" Y && ln -sfn ${dir}/.atom $HOME/.atom
-ask "Install symlink for $(textb .pcmanfm)?" Y && ln -sfn ${dir}/.config/pcmanfm $HOME/.config/pcmanfm
-ask "Create folder for your wallpapers?" N && mkdir -p $HOME/.config/wallpapers/current
+if [[ $install_i3wm == "yes" ]]; then
+    ask "Install symlink for $(textb .i3)?" Y && ln -sfn ${dir}/.config/i3 $HOME/.config/i3
+    ask "Install symlink for $(textb .i3blocks)?" Y && ln -sfn ${dir}/.config/i3blocks $HOME/.config/i3blocks
+    ask "Install symlink for $(textb .compton.conf)?" Y && ln -sfn ${dir}/.compton.conf $HOME/.compton.conf
+    ask "Install symlink for $(textb .dunst)?" Y && ln -sfn ${dir}/.config/dunst $HOME/.config/dunst
+    ask "Install symlink for $(textb .gsimplecal)?" Y && ln -sfn ${dir}/.config/gsimplecal $HOME/.config/gsimplecal
+    ask "Install symlink for $(textb .gtkrc-2.0)?" Y && ln -sfn ${dir}/.gtkrc-2.0 $HOME/.gtkrc-2.0
+    ask "Install symlink for $(textb .gtk-3.0)?" Y && mkdir -p $HOME/.config/gtk-3.0 && ln -sfn ${dir}/.config/gtk-3.0/gtk.css $HOME/.config/gtk-3.0/gtk.css && ln -sfn ${dir}/.config/gtk-3.0/settings.ini $HOME/.config/gtk-3.0/settings.ini
+    ask "Install symlink for $(textb .caffeine)?" Y && ln -sfn ${dir}/.config/caffeine $HOME/.config/caffeine
+    ask "Install symlink for $(textb .redshift)?" Y && ln -sfn ${dir}/.config/redshift.conf $HOME/.config/redshift.conf
+    ask "Install symlink for $(textb .atom)?" Y && ln -sfn ${dir}/.atom $HOME/.atom
+    ask "Install symlink for $(textb .pcmanfm)?" Y && ln -sfn ${dir}/.config/pcmanfm $HOME/.config/pcmanfm
+    ask "Create folder for your wallpapers?" N && mkdir -p $HOME/.config/wallpapers/current
+fi
