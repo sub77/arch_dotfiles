@@ -25,7 +25,7 @@ STEP="${BLOCK_INSTANCE#*/}"
 STEP="${STEP:-5}"
 
 case $BLOCK_BUTTON in	# Ponymix auto-prints volume so >/dev/null
-  1) pavucontrol ;;
+  1) pavucontrol &>/dev/null;;
   3) ponymix toggle >/dev/null;;				# Right Click
   4) ponymix --max-volume $CEILING increase $STEP >/dev/null;;	# Scroll Up
   5) ponymix --max-volume $CEILING decrease $STEP >/dev/null;;	# Scroll Down

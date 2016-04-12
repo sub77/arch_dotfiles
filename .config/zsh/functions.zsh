@@ -3,7 +3,7 @@ function mcd {
     mkdir -pv "$1" && cd "$1"
 }
 # Create a new SSH key
-function gen_rsa-4096 {
+function gen-rsa_4096 {
     if [ $# -eq 0 ]; then
         echo "Please provide a filename for your key!"
         return
